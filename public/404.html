@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      sessionStorage.redirect = JSON.stringify({
+        pathname: window.location.pathname,
+        search: window.location.search,
+        hash: window.location.hash,
+      });
+
+      window.location.replace('/');
+    </script>
+  </head>
+  <body></body>
+</html>

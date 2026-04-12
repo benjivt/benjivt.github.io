@@ -1,0 +1,112 @@
+.glass-panel {
+  position: relative;
+  border: 1px solid var(--surface-border);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.05));
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border-radius: 1.8rem;
+  overflow: hidden;
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.interaction-shell {
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 220ms ease;
+}
+
+.tilt-shell {
+  will-change: transform;
+}
+
+.spotlight-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    320px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+    rgba(255, 255, 255, 0.18),
+    transparent 45%
+  );
+  opacity: 0.9;
+}
+
+.flip-shell {
+  perspective: 1400px;
+}
+
+.flip-inner {
+  position: relative;
+  min-height: 29rem;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-shell:hover .flip-inner,
+.flip-shell:focus-within .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+.project-card-back {
+  justify-content: center;
+  gap: 1rem;
+}
+
+.preview-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.preview-scanline,
+.preview-noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.preview-scanline {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.1) 40%,
+    transparent 75%
+  );
+  transform: translateY(-120%);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.preview-noise {
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.04), transparent 35%),
+    radial-gradient(circle at 75% 20%, rgba(41, 151, 255, 0.18), transparent 28%);
+  opacity: 0.7;
+}
+
+.preview-shell:hover .preview-scanline,
+.preview-shell:focus-within .preview-scanline {
+  transform: translateY(120%);
+}
