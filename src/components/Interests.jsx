@@ -19,6 +19,7 @@ const hobbies = [
   'Soccer',
   'Karting',
   'Running',
+  'Music',
 ];
 
 export default function Interests({ sectionId = 'interests' }) {
