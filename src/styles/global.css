@@ -1027,7 +1027,7 @@ img {
 
 @media (max-width: 680px) {
   .site-header {
-    padding-inline: 0.75rem;
+    padding: 0.65rem 0.65rem 0;
   }
 
   .route-loading-shell {
@@ -1044,57 +1044,98 @@ img {
   }
 
   .nav-shell {
-    width: min(calc(100% - 1rem), var(--max-width));
-    padding: 0.72rem 0.8rem;
+    width: min(calc(100% - 0.75rem), var(--max-width));
+    padding: 0.6rem;
   }
 
   .nav-links {
-    gap: 0.45rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 0.35rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.55rem 0.3rem;
+    font-size: 0.84rem;
+    text-align: center;
   }
 
   .hero-shell {
-    min-height: calc(100svh - 6.5rem);
-    gap: 1.35rem;
-    padding: 1.25rem 0 1.9rem;
+    min-height: calc(100svh - 5.9rem);
+    gap: 0.95rem;
+    padding: 0.95rem 0 1.45rem;
+    align-items: flex-start;
   }
 
   .hero-headshot-wrap {
-    width: min(62vw, 16rem);
-    margin: 0 1rem 0 auto;
+    position: absolute;
+    top: 3.4rem;
+    right: -0.9rem;
+    width: min(43vw, 10.75rem);
+    margin: 0;
+    border-radius: 1.4rem;
+    z-index: 0;
+    opacity: 0.52;
+  }
+
+  .hero-headshot-wrap::after {
+    background:
+      linear-gradient(90deg, rgba(5, 6, 8, 0.94) 0%, rgba(5, 6, 8, 0.4) 48%, rgba(5, 6, 8, 0.08) 100%),
+      linear-gradient(180deg, rgba(5, 6, 8, 0.28), rgba(5, 6, 8, 0.42));
   }
 
   .hero-copy {
     max-width: 100%;
+    padding: 0 0.8rem;
+    z-index: 1;
+  }
+
+  .hero-copy .eyebrow {
+    margin-bottom: 0.7rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
   }
 
   .hero-description {
-    margin-top: 1.1rem;
-    font-size: 0.98rem;
-    line-height: 1.6;
+    margin-top: 0.8rem;
+    max-width: 21rem;
+    padding-right: 2rem;
+    font-size: 0.92rem;
+    line-height: 1.52;
   }
 
   .hero-actions {
-    gap: 0.75rem;
-    margin-top: 1.5rem;
+    gap: 0.55rem;
+    margin-top: 1.15rem;
   }
 
   .button-primary,
   .button-secondary {
-    min-height: 2.8rem;
-    padding: 0.75rem 1rem;
+    min-height: 2.55rem;
+    padding: 0.68rem 0.9rem;
+    font-size: 0.9rem;
   }
 
   .hero-copy h1,
   .detail-hero h1 {
-    font-size: clamp(2.5rem, 14vw, 4rem);
+    font-size: clamp(1.95rem, 11.5vw, 3.15rem);
+    line-height: 0.93;
+    max-width: 18rem;
   }
 
   .section-shell {
-    padding: 3.35rem 0;
+    padding: 2.85rem 0;
+  }
+
+  .section-heading {
+    margin-bottom: 1.2rem;
+    padding: 0 0.8rem;
   }
 
   .section-title {
-    font-size: clamp(1.8rem, 10vw, 2.6rem);
+    font-size: clamp(1.6rem, 8.8vw, 2.2rem);
     line-height: 0.98;
   }
 
@@ -1103,13 +1144,14 @@ img {
   .detail-panel p,
   .detail-list li,
   .project-card-bottom p {
-    line-height: 1.62;
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
 
   .project-card-content {
     min-height: auto;
-    padding: 1rem;
-    gap: 0.9rem;
+    padding: 0.9rem;
+    gap: 0.75rem;
   }
 
   .project-meta {
@@ -1123,24 +1165,25 @@ img {
   }
 
   .project-card-bottom h3 {
-    font-size: 1.35rem;
+    font-size: 1.18rem;
   }
 
   .project-tags span,
   .detail-tags span,
   .interest-tags span {
-    font-size: 0.78rem;
-    padding: 0.45rem 0.66rem;
+    font-size: 0.74rem;
+    padding: 0.4rem 0.58rem;
   }
 
   .timeline-item {
     grid-template-columns: 1fr;
-    gap: 0.9rem;
+    gap: 0.8rem;
+    padding: 1rem;
   }
 
   .timeline-logo-shell {
-    width: 3.7rem;
-    height: 3.7rem;
+    width: 3.25rem;
+    height: 3.25rem;
   }
 
   .timeline-meta {
@@ -1153,12 +1196,12 @@ img {
   }
 
   .interest-card {
-    padding: 1.2rem;
+    padding: 1rem;
   }
 
   .footer-panel {
-    padding: 1.35rem;
-    gap: 1.2rem;
+    padding: 1.1rem;
+    gap: 1rem;
   }
 
   .footer-links {
@@ -1173,5 +1216,25 @@ img {
   .detail-topline {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-headshot-wrap {
+    top: 3.7rem;
+    right: -1.15rem;
+    width: min(46vw, 9.75rem);
+    opacity: 0.46;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(1.82rem, 11vw, 2.85rem);
+    max-width: 15.5rem;
+  }
+
+  .hero-description {
+    max-width: 18rem;
+    padding-right: 1.6rem;
+    font-size: 0.88rem;
   }
 }
