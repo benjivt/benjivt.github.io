@@ -48,7 +48,7 @@ export const experienceContent = [
     id: 'hume-center-undergraduate-research-assistant',
     companyId: 'hume-center',
     range: 'Dec 2022 - May 2023',
-    title: 'Paid Undergraduate Research Assistant',
+    title: 'Undergraduate Research Assistant',
     company: 'Hume Center for National Security and Technology',
     summary:
       'Characterized Bluetooth Low Energy IoT devices for Boeing by testing range, battery life, and durability, then analyzing sensor data with Putty and Python to report findings back to the team.',
