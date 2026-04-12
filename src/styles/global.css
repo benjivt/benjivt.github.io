@@ -615,9 +615,30 @@ img {
 }
 
 .timeline-copy h3,
+.timeline-meta,
 .timeline-company,
+.timeline-range,
 .timeline-copy > p:last-child {
   margin: 0;
+}
+
+.timeline-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.timeline-copy h3 {
+  order: 0;
+}
+
+.timeline-meta {
+  order: 1;
+}
+
+.timeline-copy > p:last-child {
+  order: 2;
 }
 
 .timeline-range,
@@ -625,6 +646,11 @@ img {
 .detail-year,
 .related-card span {
   color: var(--text-muted);
+}
+
+.timeline-range {
+  text-align: right;
+  white-space: nowrap;
 }
 
 .site-footer {

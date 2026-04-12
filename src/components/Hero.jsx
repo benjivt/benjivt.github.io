@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
-import headshot from '../../info/headshot/headshot.png';
+import headshot from '../../info/headshot/headshot.webp';
+import { scrollToSection } from '../utils/scrollToSection';
 
-export default function Hero() {
+export default function Hero({ sectionId = 'hero' }) {
   return (
-    <section id="hero" className="hero-shell section-shell">
+    <section id={sectionId} className="hero-shell section-shell">
       <div className="hero-headshot-wrap" aria-hidden="true">
         <img src={headshot} alt="" className="hero-headshot" />
       </div>
@@ -21,12 +22,16 @@ export default function Hero() {
           intelligence, automation, and polished user-facing systems.
         </p>
         <div className="hero-actions">
-          <a className="button-primary" href="#projects">
+          <button type="button" className="button-primary" onClick={() => scrollToSection('projects')}>
             View projects
-          </a>
-          <a className="button-secondary" href="#experience">
+          </button>
+          <button
+            type="button"
+            className="button-secondary"
+            onClick={() => scrollToSection('experience')}
+          >
             Explore experience
-          </a>
+          </button>
         </div>
       </motion.div>
     </section>

@@ -1,11 +1,11 @@
 import useScrollReveal from '../hooks/useScrollReveal';
 
-export default function About() {
+export default function About({ sectionId = 'about' }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <section
-      id="about"
+      id={sectionId}
       ref={ref}
       className={`section-shell reveal-section ${isVisible ? 'is-visible' : ''}`}
     >

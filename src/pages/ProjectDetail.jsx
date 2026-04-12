@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
-import { getProjectBySlug, projects } from '../data/projects';
+import { getProjectBySlug, getRelatedProjects } from '../data/projects';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -30,7 +30,7 @@ export default function ProjectDetail() {
     );
   }
 
-  const relatedProjects = projects.filter((item) => item.slug !== slug).slice(0, 2);
+  const relatedProjects = getRelatedProjects(slug);
   const overviewCards = [
     project.challenge
       ? {
@@ -99,15 +99,17 @@ export default function ProjectDetail() {
 
       {detailSections.length > 0 && (
         <section className="detail-grid detail-section-grid">
-          {detailSections.map((section) => (
-            <article key={section.title} className="glass-panel detail-panel">
+          {detailSections.map((section, sectionIndex) => (
+            <article key={`${project.slug}-section-${sectionIndex}`} className="glass-panel detail-panel">
               {section.eyebrow ? <p className="eyebrow">{section.eyebrow}</p> : null}
               <h2 className="detail-heading">{section.title}</h2>
               {section.body ? <p>{section.body}</p> : null}
               {section.bullets?.length ? (
                 <ul className="detail-list">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
+                  {section.bullets.map((bullet, bulletIndex) => (
+                    <li key={`${project.slug}-section-${sectionIndex}-bullet-${bulletIndex}`}>
+                      {bullet}
+                    </li>
                   ))}
                 </ul>
               ) : null}

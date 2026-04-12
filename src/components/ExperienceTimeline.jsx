@@ -1,12 +1,12 @@
 import { experience } from '../data/experience';
 import useScrollReveal from '../hooks/useScrollReveal';
 
-export default function ExperienceTimeline() {
+export default function ExperienceTimeline({ sectionId = 'experience', items = experience }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <section
-      id="experience"
+      id={sectionId}
       ref={ref}
       className={`section-shell reveal-section ${isVisible ? 'is-visible' : ''}`}
     >
@@ -15,8 +15,8 @@ export default function ExperienceTimeline() {
         <h2 className="section-title">Experience building automation, interfaces, and intelligent systems.</h2>
       </div>
       <div className="timeline-shell">
-        {experience.map((item) => (
-          <article key={`${item.range}-${item.title}`} className="timeline-item glass-panel">
+        {items.map((item) => (
+          <article key={item.id} className="timeline-item glass-panel">
             <div className="timeline-logo-shell">
               {item.logo ? (
                 <img
@@ -28,9 +28,11 @@ export default function ExperienceTimeline() {
               ) : null}
             </div>
             <div className="timeline-copy">
-              <p className="timeline-range">{item.range}</p>
               <h3>{item.title}</h3>
-              <p className="timeline-company">{item.company}</p>
+              <div className="timeline-meta">
+                <p className="timeline-company">{item.company}</p>
+                <p className="timeline-range">{item.range}</p>
+              </div>
               <p>{item.summary}</p>
             </div>
           </article>

@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { createPortal } from 'react-dom';
-import { homeSections } from '../data/sections';
+import { navigatorSections } from '../data/sections';
+import { scrollToSection } from '../utils/scrollToSection';
 
 export default function SectionNavigator({ activeSection, isVisible }) {
   const location = useLocation();
@@ -8,12 +9,7 @@ export default function SectionNavigator({ activeSection, isVisible }) {
 
   const handleSectionClick = (sectionId) => {
     if (location.pathname === '/') {
-      const target = document.getElementById(sectionId);
-      target?.scrollIntoView({
-        behavior: 'smooth',
-        block: sectionId === 'contact' ? 'end' : 'start',
-      });
-      window.history.replaceState(null, '', `/#${sectionId}`);
+      scrollToSection(sectionId);
       return;
     }
 
@@ -37,7 +33,7 @@ export default function SectionNavigator({ activeSection, isVisible }) {
       }}
     >
       <div className="section-dot-list">
-        {homeSections.map((section) => {
+        {navigatorSections.map((section) => {
           const isActive = activeSection === section.id;
 
           return (

@@ -31,9 +31,9 @@ function MailIcon() {
   );
 }
 
-export default function Footer() {
+export default function Footer({ sectionId = 'contact' }) {
   return (
-    <footer id="contact" className="site-footer section-shell">
+    <footer id={sectionId} className="site-footer section-shell">
       <div className="glass-panel footer-panel">
         <div>
           <p className="eyebrow">Contact</p>

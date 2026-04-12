@@ -1,13 +1,13 @@
-import { projects } from '../data/projects';
+import { projectSummaries } from '../data/projectSummaries';
 import useScrollReveal from '../hooks/useScrollReveal';
 import ProjectCard from './ProjectCard';
 
-export default function ProjectGrid() {
+export default function ProjectGrid({ sectionId = 'projects', projects = projectSummaries }) {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <section
-      id="projects"
+      id={sectionId}
       ref={ref}
       className={`section-shell reveal-section ${isVisible ? 'is-visible' : ''}`}
     >

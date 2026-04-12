@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { navSections } from '../data/sections';
+import { scrollToSection } from '../utils/scrollToSection';
 
 export default function Navbar() {
   const location = useLocation();
@@ -7,12 +8,7 @@ export default function Navbar() {
 
   const handleSectionClick = (sectionId) => {
     if (location.pathname === '/') {
-      const target = document.getElementById(sectionId);
-      target?.scrollIntoView({
-        behavior: 'smooth',
-        block: sectionId === 'contact' ? 'end' : 'start',
-      });
-      window.history.replaceState(null, '', `/#${sectionId}`);
+      scrollToSection(sectionId);
       return;
     }
 
