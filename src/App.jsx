@@ -40,8 +40,8 @@ function PageFrame({ children, pageKey }) {
 function RouteLoadingFallback() {
   return (
     <div className="page-frame">
-      <main className="section-shell project-detail-shell">
-        <div className="glass-panel detail-panel missing-panel">
+      <main className="section-shell route-loading-shell" aria-live="polite" aria-busy="true">
+        <div className="route-loading-copy">
           <p className="eyebrow">Loading</p>
           <h1 className="section-title">Preparing the page.</h1>
         </div>

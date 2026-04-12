@@ -838,6 +838,28 @@ img {
   gap: 1rem;
 }
 
+.route-loading-shell {
+  min-height: calc(100vh - 6.5rem);
+  display: grid;
+  align-items: end;
+  padding: 0 1rem 10vh;
+  pointer-events: none;
+}
+
+.route-loading-copy {
+  width: min(100%, 32rem);
+  opacity: 0.36;
+}
+
+.route-loading-copy .eyebrow {
+  margin-bottom: 0.65rem;
+}
+
+.route-loading-copy .section-title {
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+  line-height: 1.02;
+}
+
 @media (max-width: 900px) {
   .project-grid,
   .detail-grid,
@@ -859,6 +881,11 @@ img {
 @media (max-width: 680px) {
   .site-header {
     padding-inline: 0.8rem;
+  }
+
+  .route-loading-shell {
+    min-height: calc(100vh - 5.75rem);
+    padding-bottom: 8vh;
   }
 
   .section-navigator {
