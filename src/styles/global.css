@@ -148,6 +148,81 @@ img {
   outline: none;
 }
 
+.section-navigator {
+  position: fixed;
+  top: 50%;
+  right: 1.25rem;
+  z-index: 18;
+  padding: 0.8rem 0.55rem;
+  transform: translate3d(1.5rem, -50%, 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.section-navigator.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate3d(0, -50%, 0);
+}
+
+.section-dot-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.section-dot-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 2.4rem;
+}
+
+.section-dot-label {
+  position: absolute;
+  right: 2rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: var(--text-main);
+  background: rgba(10, 12, 16, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(0.5rem);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.section-dot-button:hover .section-dot-label,
+.section-dot-button:focus-visible .section-dot-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.section-dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: rgba(245, 245, 247, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.section-dot-button:hover .section-dot,
+.section-dot-button:focus-visible .section-dot {
+  transform: scale(1.12);
+  background: rgba(245, 245, 247, 0.7);
+}
+
+.section-dot-button.is-active .section-dot {
+  background: linear-gradient(135deg, #f8fbff, #2997ff);
+  box-shadow:
+    0 0 20px rgba(41, 151, 255, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  transform: scale(1.15);
+}
+
 .section-shell {
   padding: 5rem 0;
 }
@@ -579,6 +654,15 @@ img {
 @media (max-width: 680px) {
   .site-header {
     padding-inline: 0.8rem;
+  }
+
+  .section-navigator {
+    right: 0.6rem;
+    padding: 0.7rem 0.45rem;
+  }
+
+  .section-dot-label {
+    display: none;
   }
 
   .nav-shell {

@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { homeSections } from '../data/sections';
 
-export default function Navbar() {
+export default function SectionNavigator({ activeSection, isVisible }) {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -17,29 +17,28 @@ export default function Navbar() {
   };
 
   return (
-    <header className="site-header">
-      <nav className="glass-panel nav-shell">
-        <button
-          type="button"
-          className="brand-mark"
-          onClick={() => navigate('/')}
-          aria-label="Go to homepage"
-        >
-          BA
-        </button>
-        <div className="nav-links" aria-label="Primary">
-          {homeSections.map((section) => (
+    <aside
+      className={`section-navigator glass-panel ${isVisible ? 'is-visible' : ''}`}
+      aria-label="Section navigator"
+    >
+      <div className="section-dot-list">
+        {homeSections.map((section) => {
+          const isActive = activeSection === section.id;
+
+          return (
             <button
               key={section.id}
               type="button"
-              className="nav-link"
+              className={`section-dot-button ${isActive ? 'is-active' : ''}`}
               onClick={() => handleSectionClick(section.id)}
+              aria-label={`Go to ${section.label}`}
             >
-              {section.label}
+              <span className="section-dot-label">{section.label}</span>
+              <span className="section-dot" aria-hidden="true" />
             </button>
-          ))}
-        </div>
-      </nav>
-    </header>
+          );
+        })}
+      </div>
+    </aside>
   );
 }
