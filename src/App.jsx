@@ -1,7 +1,8 @@
 import { lazy, Suspense } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import { ENABLE_PROJECT_DETAILS } from './config/features';
 
 const Home = lazy(() => import('./pages/Home'));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
@@ -73,7 +74,7 @@ export default function App() {
               path="/project/:slug"
               element={
                 <PageFrame pageKey="project">
-                  <ProjectDetail />
+                  {ENABLE_PROJECT_DETAILS ? <ProjectDetail /> : <Navigate to="/#projects" replace />}
                 </PageFrame>
               }
             />

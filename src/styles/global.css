@@ -442,6 +442,10 @@ img {
   color: inherit;
 }
 
+.project-card-link.is-disabled {
+  cursor: default;
+}
+
 .project-card-content {
   min-height: 29rem;
   padding: 1.4rem;
