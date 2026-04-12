@@ -39,4 +39,24 @@ export const projectSummaryContent = [
     role: 'Arduino Uno, Bluetooth, Sensors, GUI',
     stack: ['Arduino Uno', 'Bluetooth', 'Ultrasonic Sensor', 'MPU6050'],
   },
+  {
+    slug: 'nano-games',
+    title: 'Nano Games',
+    category: 'Embedded Systems / Game Development',
+    year: '2023',
+    summary:
+      'A multi-game embedded arcade experience that cycles through Meter Filler, Direction Obeyer, and Color Confirmer using finite state machines, joystick noise-based randomness, and a BoosterPack LCD interface.',
+    role: 'Embedded C, FSMs, SPI, GPIO',
+    stack: ['Embedded C', 'Finite State Machines', 'SPI', 'MSP432'],
+  },
+  {
+    slug: 'low-power-tamagotchi',
+    title: 'Low-Power Tamagotchi',
+    category: 'Embedded Systems / Game Development',
+    year: '2023',
+    summary:
+      'A low-power virtual pet game themed around The Amazing World of Gumball that uses interrupt-driven gameplay, sprite-based life stages, and joystick/button controls on an embedded display.',
+    role: 'Embedded C, Interrupts, SPI, Sprite Work',
+    stack: ['Embedded C', 'Interrupt Architecture', 'SPI', 'GPIO'],
+  },
 ];

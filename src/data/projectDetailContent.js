@@ -174,4 +174,96 @@ export const projectDetailContentBySlug = {
       },
     ],
   },
+  'nano-games': {
+    challenge:
+      'The project needed to package three distinct mini-games into one responsive embedded experience while keeping the code modular, non-blocking, and compatible with constrained launchpad inputs and display hardware.',
+    outcome:
+      'The final build delivered a three-game arcade loop with lives, high scores, custom graphics, and joystick-based randomness, all organized around finite state machines and event-driven gameplay.',
+    detailSections: [
+      {
+        eyebrow: 'Overview',
+        title: 'Three games in one embedded arcade',
+        bullets: [
+          'The project combined Meter Filler, Direction Obeyer, and Color Confirmer into one rotating experience.',
+          'Each game used a two-second pregame state followed by a four-second active game window.',
+          'The session tracked score, lives, and a final game-over state with high-score updates.',
+        ],
+      },
+      {
+        eyebrow: 'Gameplay',
+        title: 'Input and scoring design',
+        bullets: [
+          'Meter Filler challenged the player to time a button press within half a second of a filling meter.',
+          'Direction Obeyer required holding the joystick in a prompted random direction.',
+          'Color Confirmer paired random color prompts with true or false button responses.',
+          'Successful rounds added 1000 points, while failed rounds reduced the player life count.',
+        ],
+      },
+      {
+        eyebrow: 'Architecture',
+        title: 'Hardware and communication flow',
+        bullets: [
+          'GPIO handled inputs from launchpad buttons, BoosterPack buttons, and joystick movement.',
+          'SPI communication linked the system to the BoosterPack LCD for real-time graphics.',
+          'The codebase relied on finite state machines and application-struct pointers to manage game state transitions cleanly.',
+        ],
+      },
+      {
+        eyebrow: 'Polish',
+        title: 'Quality and bonus features',
+        bullets: [
+          'The project emphasized reasonably commented, non-blocking code with limited hard-coded values.',
+          'Custom title and life graphics were added to improve the visual presentation.',
+          'Joystick ADC noise was used as a random-number source instead of standard `rand()` calls.',
+          'A random-color LED effect added extra chaos during Color Confirmer rounds.',
+        ],
+      },
+    ],
+  },
+  'low-power-tamagotchi': {
+    challenge:
+      'The game needed to maintain a responsive virtual pet loop on low-power embedded hardware, balancing animation, pet-state updates, and user input without abandoning an interrupt-driven architecture.',
+    outcome:
+      'The finished Tamagotchi delivered character selection, evolving pet life stages, low-power interrupt handling, and sprite-based visuals in a polished embedded game themed around The Amazing World of Gumball.',
+    detailSections: [
+      {
+        eyebrow: 'Concept',
+        title: 'A virtual pet on constrained hardware',
+        bullets: [
+          'Players choose between Gumball, Darwin, and Anais before gameplay begins.',
+          'The pet must be fed and played with to prevent energy and happiness from dropping to zero.',
+          'Aging, energy, and happiness stats drive the pet life-cycle and game-over conditions.',
+        ],
+      },
+      {
+        eyebrow: 'Gameplay',
+        title: 'Input loop and pet-state system',
+        bullets: [
+          'BoosterPack button 1 feeds the pet to restore energy.',
+          'Left and right joystick movement drives pet movement and increases happiness.',
+          'Movement consumes energy, so the user must balance both needs to keep the pet alive.',
+          'Every three seconds the pet ages and both energy and happiness are decremented.',
+        ],
+      },
+      {
+        eyebrow: 'Architecture',
+        title: 'Interrupt-first low-power design',
+        bullets: [
+          'The CPU remains in low-power sleep until an interrupt wakes it for input or update work.',
+          'GPIO handles input and output across buttons, joystick, LEDs, and other peripherals.',
+          'SPI communication powers the BoosterPack LCD graphics pipeline.',
+          'The design keeps the gameplay responsive while respecting the low-power architecture requirement.',
+        ],
+      },
+      {
+        eyebrow: 'Polish',
+        title: 'Presentation and code quality goals',
+        bullets: [
+          'The project included custom title and game-over images plus sprite work for pet life stages.',
+          'Preset character selection was implemented with multiple finite state machines.',
+          'The report emphasizes non-blocking code, limited hard-coded values, and manageable function sizes.',
+        ],
+      },
+    ],
+  },
 };

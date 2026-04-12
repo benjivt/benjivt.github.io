@@ -27,6 +27,15 @@ export const experienceContent = [
       'Built an anomaly detection pipeline for hardware health assessment by cleaning and structuring driver logs, then training an unsupervised machine learning model for proactive failure detection.',
   },
   {
+    id: 'virginia-tech-national-security-institute-project-manager',
+    companyId: 'virginia-tech-national-security-institute',
+    range: 'Sep 2023 - May 2024',
+    title: 'Project Manager - Edge Supercomputing for Autonomous Sensor Platforms',
+    company: 'Virginia Tech National Security Institute',
+    summary:
+      'Led a four-person undergraduate research team on an autonomous sensor platform effort while building project budgets, schedules, and risk reporting skills for government-funded work.',
+  },
+  {
     id: 'collins-aerospace-sepp-mission-systems',
     companyId: 'collins-aerospace',
     range: 'Jun 2023 - Aug 2023',
@@ -34,5 +43,14 @@ export const experienceContent = [
     company: 'Collins Aerospace',
     summary:
       'Developed an operational testing platform for unmanned aerial systems on ground robots, cutting testing costs by 90 percent while processing GPS and IMU telemetry to command motion through Station Keeping Playbook workflows.',
+  },
+  {
+    id: 'hume-center-undergraduate-research-assistant',
+    companyId: 'hume-center',
+    range: 'Dec 2022 - May 2023',
+    title: 'Paid Undergraduate Research Assistant - Boeing IoT Device Characterization',
+    company: 'Hume Center for National Security and Technology',
+    summary:
+      'Characterized Bluetooth Low Energy IoT devices for Boeing by testing range, battery life, and durability, then analyzing sensor data with Putty and Python to report findings back to the team.',
   },
 ];
