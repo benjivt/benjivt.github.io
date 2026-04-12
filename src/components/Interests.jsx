@@ -6,9 +6,20 @@ const interestAreas = [
   'Embedded Software Systems',
   'Robotics',
   'Mixed Reality',
+  'Video Game Design',
 ];
 
-const hobbies = ['E-skating', 'Hiking', 'Kayaking', 'Fitness', 'Ping-Pong', 'Basketball', 'Soccer'];
+const hobbies = [
+  'E-skating',
+  'Hiking',
+  'Kayaking',
+  'Fitness',
+  'Ping-Pong',
+  'Basketball',
+  'Soccer',
+  'Karting',
+  'Running',
+];
 
 export default function Interests({ sectionId = 'interests' }) {
   const { ref, isVisible } = useScrollReveal();
