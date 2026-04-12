@@ -32,6 +32,14 @@ export const sectionDefinitions = [
     scrollBlock: 'start',
   },
   {
+    id: 'interests',
+    label: 'Interests',
+    componentKey: 'interests',
+    showInNavigator: true,
+    showInNavbar: true,
+    scrollBlock: 'start',
+  },
+  {
     id: 'contact',
     label: 'Contact',
     componentKey: 'contact',

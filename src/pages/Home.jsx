@@ -4,6 +4,7 @@ import About from '../components/About';
 import ExperienceTimeline from '../components/ExperienceTimeline';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
+import Interests from '../components/Interests';
 import ProjectGrid from '../components/ProjectGrid';
 import SectionNavigator from '../components/SectionNavigator';
 import { homeSections } from '../data/sections';
@@ -14,6 +15,7 @@ const homeSectionComponents = {
   about: About,
   projects: ProjectGrid,
   experience: ExperienceTimeline,
+  interests: Interests,
   contact: Footer,
 };
 
