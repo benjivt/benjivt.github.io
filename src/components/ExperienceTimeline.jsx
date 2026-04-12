@@ -12,12 +12,21 @@ export default function ExperienceTimeline() {
     >
       <div className="section-heading">
         <p className="eyebrow">Experience</p>
-        <h2 className="section-title">A timeline layout that can grow with your story.</h2>
+        <h2 className="section-title">Experience building automation, interfaces, and intelligent systems.</h2>
       </div>
       <div className="timeline-shell">
         {experience.map((item) => (
           <article key={`${item.range}-${item.title}`} className="timeline-item glass-panel">
-            <div className="timeline-marker" />
+            <div className="timeline-logo-shell">
+              {item.logo ? (
+                <img
+                  src={item.logo}
+                  alt={`${item.company} logo`}
+                  className="timeline-logo"
+                  style={{ transform: `scale(${item.logoScale ?? 1})` }}
+                />
+              ) : null}
+            </div>
             <div className="timeline-copy">
               <p className="timeline-range">{item.range}</p>
               <h3>{item.title}</h3>

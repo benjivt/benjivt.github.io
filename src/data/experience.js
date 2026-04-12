@@ -1,23 +1,42 @@
+import automationCreationsLogo from '../../info/logos/automation creations logo.png';
+import collinsAerospaceLogo from '../../info/logos/collins aerospace logo.png';
+import microsoftLogo from '../../info/logos/microsoft logo.png';
+
 export const experience = [
   {
-    range: '2025 - Present',
-    title: 'Portfolio Framework in Progress',
-    company: 'Independent Builder',
+    range: 'Sep 2025 - Mar 2026',
+    title: 'Software Engineer - UI Design',
+    company: 'Automation Creations, Inc.',
+    logo: automationCreationsLogo,
+    logoScale: 1.55,
     summary:
-      'Designing a premium personal site architecture that can scale from a landing page into a full case study system.',
+      'Developed interactive screens, data tables, and reusable Qt/QML UI components for a data-driven customization application while resolving Agile backlog tickets across front-end enhancements and feature work.',
   },
   {
-    range: '2024 - 2025',
-    title: 'Systems and Product Work',
-    company: 'Placeholder Experience Slot',
+    range: 'May 2025 - Aug 2025',
+    title: 'Software for Hardware Engineer Intern',
+    company: 'Microsoft',
+    logo: microsoftLogo,
+    logoScale: 1.08,
     summary:
-      'Reserved for operational, engineering, or product experience once the real story and metrics are ready.',
+      'Automated test execution with PowerShell and built a scalable telemetry integration and Power BI reporting workflow that improved continuous monitoring and cross-functional bug resolution.',
   },
   {
-    range: '2023 - 2024',
-    title: 'Creative Technology Experiments',
-    company: 'Placeholder Experience Slot',
+    range: 'May 2024 - Aug 2024',
+    title: 'Software for Hardware Engineer Intern',
+    company: 'Microsoft',
+    logo: microsoftLogo,
+    logoScale: 1.08,
     summary:
-      'Reserved for prototypes, shipped features, or exploratory work that demonstrates range and taste.',
+      'Built an anomaly detection pipeline for hardware health assessment by cleaning and structuring driver logs, then training an unsupervised machine learning model for proactive failure detection.',
+  },
+  {
+    range: 'Jun 2023 - Aug 2023',
+    title: 'SEPP Mission Systems Software Engineer Intern',
+    company: 'Collins Aerospace',
+    logo: collinsAerospaceLogo,
+    logoScale: 1.08,
+    summary:
+      'Developed an operational testing platform for unmanned aerial systems on ground robots, cutting testing costs by 90 percent while processing GPS and IMU telemetry to command motion through Station Keeping Playbook workflows.',
   },
 ];

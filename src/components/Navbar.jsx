@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { homeSections } from '../data/sections';
+import { navSections } from '../data/sections';
 
 export default function Navbar() {
   const location = useLocation();
@@ -8,7 +8,10 @@ export default function Navbar() {
   const handleSectionClick = (sectionId) => {
     if (location.pathname === '/') {
       const target = document.getElementById(sectionId);
-      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target?.scrollIntoView({
+        behavior: 'smooth',
+        block: sectionId === 'contact' ? 'end' : 'start',
+      });
       window.history.replaceState(null, '', `/#${sectionId}`);
       return;
     }
@@ -19,16 +22,8 @@ export default function Navbar() {
   return (
     <header className="site-header">
       <nav className="glass-panel nav-shell">
-        <button
-          type="button"
-          className="brand-mark"
-          onClick={() => navigate('/')}
-          aria-label="Go to homepage"
-        >
-          BA
-        </button>
         <div className="nav-links" aria-label="Primary">
-          {homeSections.map((section) => (
+          {navSections.map((section) => (
             <button
               key={section.id}
               type="button"

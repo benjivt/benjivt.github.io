@@ -7,6 +7,10 @@ export default function ProjectDetail() {
   const navigate = useNavigate();
   const location = useLocation();
   const project = getProjectBySlug(slug);
+  const returnState = {
+    scrollY: location.state?.scrollY,
+    fromSection: location.state?.fromSection ?? 'projects',
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -27,6 +31,23 @@ export default function ProjectDetail() {
   }
 
   const relatedProjects = projects.filter((item) => item.slug !== slug).slice(0, 2);
+  const overviewCards = [
+    project.challenge
+      ? {
+          eyebrow: 'Challenge',
+          title: 'What needed to be solved.',
+          body: project.challenge,
+        }
+      : null,
+    project.outcome
+      ? {
+          eyebrow: 'Outcome',
+          title: 'What shipped, improved, or was learned.',
+          body: project.outcome,
+        }
+      : null,
+  ].filter(Boolean);
+  const detailSections = project.detailSections ?? [];
 
   return (
     <main className="project-detail-shell section-shell">
@@ -35,7 +56,11 @@ export default function ProjectDetail() {
           <button
             type="button"
             className="button-secondary back-button"
-            onClick={() => navigate('/', { state: { scrollY: location.state?.scrollY ?? 0 } })}
+            onClick={() =>
+              navigate('/#projects', {
+                state: returnState,
+              })
+            }
           >
             Back to projects
           </button>
@@ -49,52 +74,52 @@ export default function ProjectDetail() {
             <span key={item}>{item}</span>
           ))}
         </div>
+        {project.thumbnail ? (
+          <div className="detail-preview">
+            <img
+              src={project.thumbnail}
+              alt={`${project.title} project preview`}
+              className="detail-preview-image"
+            />
+          </div>
+        ) : null}
       </div>
 
-      <section className="detail-grid">
-        <article className="glass-panel detail-panel">
-          <p className="eyebrow">Challenge</p>
-          <h2 className="detail-heading">A placeholder for the problem to solve.</h2>
-          <p>{project.challenge}</p>
-        </article>
-        <article className="glass-panel detail-panel">
-          <p className="eyebrow">Outcome</p>
-          <h2 className="detail-heading">A flexible slot for proof and impact.</h2>
-          <p>{project.outcome}</p>
-        </article>
-      </section>
+      {overviewCards.length > 0 && (
+        <section className="detail-grid">
+          {overviewCards.map((card) => (
+            <article key={card.eyebrow} className="glass-panel detail-panel">
+              <p className="eyebrow">{card.eyebrow}</p>
+              <h2 className="detail-heading">{card.title}</h2>
+              <p>{card.body}</p>
+            </article>
+          ))}
+        </section>
+      )}
 
-      <section className="glass-panel detail-panel detail-layout">
-        <div>
-          <p className="eyebrow">Case Study Layout</p>
-          <h2 className="detail-heading">Ready for visuals, process, and measurable results.</h2>
-        </div>
-        <div className="detail-columns">
-          <div>
-            <h3>Recommended sections</h3>
-            <ul className="detail-list">
-              <li>Context and project goal</li>
-              <li>Your role and ownership</li>
-              <li>Constraints and tradeoffs</li>
-              <li>Execution snapshots or prototypes</li>
-              <li>Results, metrics, or outcomes</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Media placeholders</h3>
-            <div className="detail-media">
-              <span className="detail-media-large" />
-              <span className="detail-media-small" />
-              <span className="detail-media-small" />
-            </div>
-          </div>
-        </div>
-      </section>
+      {detailSections.length > 0 && (
+        <section className="detail-grid detail-section-grid">
+          {detailSections.map((section) => (
+            <article key={section.title} className="glass-panel detail-panel">
+              {section.eyebrow ? <p className="eyebrow">{section.eyebrow}</p> : null}
+              <h2 className="detail-heading">{section.title}</h2>
+              {section.body ? <p>{section.body}</p> : null}
+              {section.bullets?.length ? (
+                <ul className="detail-list">
+                  {section.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </article>
+          ))}
+        </section>
+      )}
 
       <section className="section-shell related-shell">
         <div className="section-heading">
           <p className="eyebrow">More Projects</p>
-          <h2 className="section-title">The framework also supports connected case studies.</h2>
+          <h2 className="section-title">Explore more of my work.</h2>
         </div>
         <div className="related-grid">
           {relatedProjects.map((item) => (
@@ -102,7 +127,11 @@ export default function ProjectDetail() {
               key={item.slug}
               type="button"
               className="glass-panel related-card"
-              onClick={() => navigate(`/project/${item.slug}`, { state: { scrollY: location.state?.scrollY ?? 0 } })}
+              onClick={() =>
+                navigate(`/project/${item.slug}`, {
+                  state: returnState,
+                })
+              }
             >
               <span>{item.category}</span>
               <strong>{item.title}</strong>

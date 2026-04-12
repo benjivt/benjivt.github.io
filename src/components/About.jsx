@@ -11,18 +11,22 @@ export default function About() {
     >
       <div className="section-heading">
         <p className="eyebrow">About</p>
-        <h2 className="section-title">Premium framing first, content second.</h2>
+        <h2 className="section-title">Machine intelligence, product thinking, and strong engineering fundamentals.</h2>
       </div>
       <div className="glass-panel prose-panel">
         <p className="section-copy">
-          The site is intentionally designed as a system before it becomes a resume.
-          Each section is ready for refined content, while the visual language already
-          communicates clarity, ambition, and technical polish.
+          I am a Virginia Tech M.Eng. candidate in Software and Machine Intelligence
+          looking for software engineering roles where I can build reliable systems
+          with real user impact. My work spans anomaly detection, test automation,
+          UI development, and applied machine learning across enterprise and research
+          environments.
         </p>
         <p className="section-copy">
-          The result is a framework you can keep evolving: a cinematic landing
-          experience, interactive project cards, and dedicated case study routes that
-          make future additions feel native rather than bolted on.
+          I enjoy translating complex technical problems into usable products, whether
+          that means wiring telemetry into dashboards, building responsive Qt/QML
+          interfaces, or turning raw sensor data into machine learning pipelines.
+          My toolbox includes Python, PowerShell, C/C++, C#, JavaScript, PyTorch,
+          TensorFlow, scikit-learn, OpenCV, Unity, and modern Git-based workflows.
         </p>
       </div>
     </section>

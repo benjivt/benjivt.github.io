@@ -11,7 +11,7 @@ export default function Home() {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(location.hash.replace('#', '') || '');
-  const [showSectionNavigator, setShowSectionNavigator] = useState(Boolean(location.hash));
+  const [showSectionNavigator, setShowSectionNavigator] = useState(false);
 
   const sectionIds = useMemo(() => homeSections.map((section) => section.id), []);
 
@@ -19,6 +19,13 @@ export default function Home() {
     if (typeof location.state?.scrollY === 'number') {
       window.scrollTo({ top: location.state.scrollY, behavior: 'auto' });
       navigate(location.pathname + location.hash, { replace: true, state: null });
+      return;
+    }
+
+    if (location.state?.fromSection === 'projects') {
+      const target = document.getElementById('projects');
+      target?.scrollIntoView({ behavior: 'auto', block: 'start' });
+      navigate(location.pathname + '#projects', { replace: true, state: null });
       return;
     }
 
@@ -32,6 +39,27 @@ export default function Home() {
   }, [location.hash, location.pathname, location.state, navigate]);
 
   useEffect(() => {
+    const hero = document.getElementById('hero');
+    if (!hero) {
+      return undefined;
+    }
+
+    const updateNavigatorVisibility = () => {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      setShowSectionNavigator(heroBottom < window.innerHeight * 0.72);
+    };
+
+    updateNavigatorVisibility();
+    window.addEventListener('scroll', updateNavigatorVisibility, { passive: true });
+    window.addEventListener('resize', updateNavigatorVisibility);
+
+    return () => {
+      window.removeEventListener('scroll', updateNavigatorVisibility);
+      window.removeEventListener('resize', updateNavigatorVisibility);
+    };
+  }, []);
+
+  useEffect(() => {
     const elements = sectionIds
       .map((sectionId) => document.getElementById(sectionId))
       .filter(Boolean);
@@ -40,42 +68,49 @@ export default function Home() {
       return undefined;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((entryA, entryB) => entryB.intersectionRatio - entryA.intersectionRatio);
+    const updateActiveSection = () => {
+      const isNearBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 32;
 
-        if (!visibleEntries.length) {
-          return;
-        }
-
-        const nextSection = visibleEntries[0].target.id;
-        setActiveSection(nextSection);
-        setShowSectionNavigator(true);
-      },
-      {
-        rootMargin: '-25% 0px -45% 0px',
-        threshold: [0.2, 0.4, 0.65],
+      if (isNearBottom) {
+        setActiveSection('contact');
+        return;
       }
-    );
 
-    elements.forEach((element) => observer.observe(element));
+      const viewportMidpoint = window.innerHeight * 0.5;
 
-    return () => observer.disconnect();
-  }, [sectionIds]);
+      const containingSection = elements.find((element) => {
+        const rect = element.getBoundingClientRect();
+        return rect.top <= viewportMidpoint && rect.bottom >= viewportMidpoint;
+      });
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 220) {
-        setShowSectionNavigator(true);
+      if (containingSection) {
+        setActiveSection(containingSection.id);
+        return;
       }
+
+      const passedSections = elements.filter((element) => {
+        const rect = element.getBoundingClientRect();
+        return rect.top <= viewportMidpoint;
+      });
+
+      if (passedSections.length) {
+        setActiveSection(passedSections[passedSections.length - 1].id);
+        return;
+      }
+
+      setActiveSection(elements[0].id);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
 
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, [sectionIds]);
 
   return (
     <main>

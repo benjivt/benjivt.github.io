@@ -13,10 +13,11 @@ export default function ProjectGrid() {
     >
       <div className="section-heading">
         <p className="eyebrow">Projects</p>
-        <h2 className="section-title">Interactable cards ready for case studies.</h2>
+        <h2 className="section-title">Selected work across mixed reality, machine learning, vision, and embedded systems.</h2>
         <p className="section-copy">
-          Each placeholder card demonstrates a different micro-interaction, so the
-          portfolio already feels productized before final content is added.
+          These projects reflect how I approach applied engineering problems: build a
+          strong data pipeline, choose pragmatic tools, and ship something measurable,
+          interactive, or useful.
         </p>
       </div>
       <div className="project-grid">

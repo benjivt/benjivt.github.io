@@ -14,16 +14,26 @@ function CardContent({ project }) {
         </p>
         <div className="project-display">
           <div className="display-window">
-            <div className="display-toolbar">
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="display-bars">
-              <span />
-              <span />
-              <span />
-            </div>
+            {project.thumbnail ? (
+              <img
+                src={project.thumbnail}
+                alt={`${project.title} thumbnail`}
+                className="project-thumbnail"
+              />
+            ) : (
+              <>
+                <div className="display-toolbar">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <div className="display-bars">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -80,7 +90,7 @@ export default function ProjectCard({ project }) {
   return (
     <Link
       to={`/project/${project.slug}`}
-      state={{ scrollY: window.scrollY }}
+      state={{ scrollY: window.scrollY, fromSection: 'projects' }}
       className="project-card-link"
       aria-label={`Open ${project.title} project details`}
     >

@@ -102,7 +102,7 @@
 .preview-noise {
   background:
     linear-gradient(115deg, rgba(255, 255, 255, 0.04), transparent 35%),
-    radial-gradient(circle at 75% 20%, rgba(41, 151, 255, 0.18), transparent 28%);
+    radial-gradient(circle at 75% 20%, rgba(178, 141, 255, 0.2), transparent 28%);
   opacity: 0.7;
 }
 
