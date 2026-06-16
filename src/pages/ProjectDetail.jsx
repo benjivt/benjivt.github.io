@@ -19,9 +19,9 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <main className="project-detail-shell section-shell">
-        <div className="glass-panel detail-panel missing-panel">
+        <div className="glass-panel glass-tier-2 detail-panel missing-panel">
           <p className="eyebrow">Not Found</p>
-          <h1 className="section-title">This project slot is waiting to be defined.</h1>
+          <h1 className="section-title">Project not found.</h1>
           <button type="button" className="button-secondary" onClick={() => navigate('/')}>
             Return home
           </button>
@@ -34,15 +34,15 @@ export default function ProjectDetail() {
   const overviewCards = [
     project.challenge
       ? {
-          eyebrow: 'Challenge',
-          title: 'What needed to be solved.',
+          eyebrow: 'Problem',
+          title: 'What we were solving.',
           body: project.challenge,
         }
       : null,
     project.outcome
       ? {
-          eyebrow: 'Outcome',
-          title: 'What shipped, improved, or was learned.',
+          eyebrow: 'Result',
+          title: 'What shipped.',
           body: project.outcome,
         }
       : null,
@@ -51,7 +51,7 @@ export default function ProjectDetail() {
 
   return (
     <main className="project-detail-shell section-shell">
-      <div className="detail-hero glass-panel" style={{ '--card-accent': project.accent }}>
+      <div className="detail-hero glass-panel glass-tier-3" style={{ '--card-accent': project.accent }}>
         <div className="detail-topline">
           <button
             type="button"
@@ -88,7 +88,7 @@ export default function ProjectDetail() {
       {overviewCards.length > 0 && (
         <section className="detail-grid">
           {overviewCards.map((card) => (
-            <article key={card.eyebrow} className="glass-panel detail-panel">
+            <article key={card.eyebrow} className="glass-panel glass-tier-2 detail-panel">
               <p className="eyebrow">{card.eyebrow}</p>
               <h2 className="detail-heading">{card.title}</h2>
               <p>{card.body}</p>
@@ -100,7 +100,7 @@ export default function ProjectDetail() {
       {detailSections.length > 0 && (
         <section className="detail-grid detail-section-grid">
           {detailSections.map((section, sectionIndex) => (
-            <article key={`${project.slug}-section-${sectionIndex}`} className="glass-panel detail-panel">
+            <article key={`${project.slug}-section-${sectionIndex}`} className="glass-panel glass-tier-2 detail-panel">
               {section.eyebrow ? <p className="eyebrow">{section.eyebrow}</p> : null}
               <h2 className="detail-heading">{section.title}</h2>
               {section.body ? <p>{section.body}</p> : null}
@@ -128,7 +128,7 @@ export default function ProjectDetail() {
             <button
               key={item.slug}
               type="button"
-              className="glass-panel related-card"
+              className="glass-panel glass-tier-2 related-card"
               onClick={() =>
                 navigate(`/project/${item.slug}`, {
                   state: returnState,

@@ -13,6 +13,10 @@ function validateExperienceData() {
       throw new Error(`Missing company assets for companyId "${item.companyId}".`);
     }
 
+    if (!item.location?.trim()) {
+      throw new Error(`Missing location for experience id "${item.id}".`);
+    }
+
     seenIds.add(item.id);
   }
 }

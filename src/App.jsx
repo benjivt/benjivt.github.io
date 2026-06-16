@@ -2,10 +2,13 @@ import { lazy, Suspense } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ScrollAtmosphere from './components/ScrollAtmosphere';
 import { ENABLE_PROJECT_DETAILS } from './config/features';
 
 const Home = lazy(() => import('./pages/Home'));
-const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
+const ProjectDetail = ENABLE_PROJECT_DETAILS
+  ? lazy(() => import('./pages/ProjectDetail'))
+  : null;
 
 const pageTransition = {
   initial: { opacity: 0, y: 24, filter: 'blur(10px)' },
@@ -44,10 +47,21 @@ function RouteLoadingFallback() {
       <main className="section-shell route-loading-shell" aria-live="polite" aria-busy="true">
         <div className="route-loading-copy">
           <p className="eyebrow">Loading</p>
-          <h1 className="section-title">Preparing the page.</h1>
+          <p className="section-title route-loading-title">Loading portfolio.</p>
         </div>
       </main>
     </div>
+  );
+}
+
+function CatchAllRedirect() {
+  const location = useLocation();
+
+  return (
+    <Navigate
+      to={{ pathname: '/', search: location.search, hash: location.hash }}
+      replace
+    />
   );
 }
 
@@ -56,8 +70,10 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <div className="background-orb background-orb-one" />
-      <div className="background-orb background-orb-two" />
+      <a href="#main" className="skip-link">
+        Skip to main content
+      </a>
+      <ScrollAtmosphere />
       <Navbar />
       <Suspense fallback={<RouteLoadingFallback />}>
         <AnimatePresence mode="wait">
@@ -70,22 +86,19 @@ export default function App() {
                 </PageFrame>
               }
             />
-            <Route
-              path="/project/:slug"
-              element={
-                <PageFrame pageKey="project">
-                  {ENABLE_PROJECT_DETAILS ? <ProjectDetail /> : <Navigate to="/#projects" replace />}
-                </PageFrame>
-              }
-            />
-            <Route
-              path="*"
-              element={
-                <PageFrame pageKey="fallback">
-                  <Home />
-                </PageFrame>
-              }
-            />
+            {ENABLE_PROJECT_DETAILS && ProjectDetail ? (
+              <Route
+                path="/project/:slug"
+                element={
+                  <PageFrame pageKey="project">
+                    <ProjectDetail />
+                  </PageFrame>
+                }
+              />
+            ) : (
+              <Route path="/project/:slug" element={<Navigate to="/#projects" replace />} />
+            )}
+            <Route path="*" element={<CatchAllRedirect />} />
           </Routes>
         </AnimatePresence>
       </Suspense>

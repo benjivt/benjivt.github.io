@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,14 +27,46 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test
 
       - name: Build site
         run: npm run build
+
+      # QA-016: fail CI if the main JS chunk grows beyond budget (~291 KB raw / ~95 KB gzip today).
+      - name: Check main bundle size budget
+        run: |
+          MAIN_JS=$(find dist/assets -name 'index-*.js' -type f | head -1)
+          if [ -z "$MAIN_JS" ]; then
+            echo "::error::Main JS chunk not found in dist/assets"
+            exit 1
+          fi
+          RAW_MAX=320000
+          GZIP_MAX=100000
+          RAW_SIZE=$(wc -c < "$MAIN_JS" | tr -d ' ')
+          GZIP_SIZE=$(gzip -c "$MAIN_JS" | wc -c | tr -d ' ')
+          echo "Main bundle: ${RAW_SIZE} bytes raw (budget ${RAW_MAX})"
+          echo "Main bundle: ${GZIP_SIZE} bytes gzip (budget ${GZIP_MAX})"
+          if [ "$RAW_SIZE" -gt "$RAW_MAX" ]; then
+            echo "::error::Main JS chunk exceeds raw budget (${RAW_SIZE} > ${RAW_MAX} bytes)"
+            exit 1
+          fi
+          if [ "$GZIP_SIZE" -gt "$GZIP_MAX" ]; then
+            echo "::error::Main JS chunk exceeds gzip budget (${GZIP_SIZE} > ${GZIP_MAX} bytes)"
+            exit 1
+          fi
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run end-to-end tests
+        run: npm run test:e2e
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -45,7 +77,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
+    needs: ci
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages

@@ -1,6 +1,6 @@
 import { projectSummaries } from '../data/projectSummaries';
 import useScrollReveal from '../hooks/useScrollReveal';
-import ProjectCard from './ProjectCard';
+import ProjectOrbit from './ProjectOrbit';
 
 export default function ProjectGrid({ sectionId = 'projects', projects = projectSummaries }) {
   const { ref, isVisible } = useScrollReveal();
@@ -13,18 +13,9 @@ export default function ProjectGrid({ sectionId = 'projects', projects = project
     >
       <div className="section-heading">
         <p className="eyebrow">Projects</p>
-        <h2 className="section-title">Selected work across mixed reality, machine learning, vision, and embedded systems.</h2>
-        <p className="section-copy">
-          These projects reflect how I approach applied engineering problems: build a
-          strong data pipeline, choose pragmatic tools, and ship something measurable,
-          interactive, or useful.
-        </p>
+        <h2 className="section-title">Selected work.</h2>
       </div>
-      <div className="project-grid">
-        {projects.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
-        ))}
-      </div>
+      <ProjectOrbit projects={projects} />
     </section>
   );
 }

@@ -5,7 +5,7 @@ export const projectSummaryContent = [
     category: 'Mixed Reality / Data Visualization',
     year: '2026',
     summary:
-      'A mixed reality spectrum analysis tool that overlays live RF activity onto the physical environment so users can tune, inspect, and locate signals without a tethered 2D display.',
+      'Overlays live RF spectrum data in a Quest 3 headset so you can tune and inspect signals without a tethered 2D analyzer.',
     role: 'Meta Quest 3, Raspberry Pi 5, Ettus B206mini, Unity',
     stack: ['Unity', 'OpenCV', 'UDP', 'Meta Quest 3'],
   },
@@ -15,7 +15,7 @@ export const projectSummaryContent = [
     category: 'Machine Learning / Biosensing',
     year: '2025',
     summary:
-      'A dual-modal biosensing project that combines machine learning, Raman spectroscopy, and electrochemical impedance measurements to improve early detection of abnormal milk samples.',
+      'Subclinical mastitis is hard to catch early on a farm. This project paired Raman and EIS with ML, a GUI, and a SQLite backend to flag abnormal milk samples.',
     role: 'Machine Learning, Raman, EIS, GUI, Database',
     stack: ['Machine Learning', 'Raman Spectroscopy', 'EIS', 'SQLite'],
   },
@@ -25,9 +25,9 @@ export const projectSummaryContent = [
     category: 'Computer Vision',
     year: '2024',
     summary:
-      'A real-time computer vision project that uses CNN-based face detection and feature extraction to identify 20 facial attributes from live video and datasets.',
-    role: 'Computer Vision, MTCNN, Multi-CNN',
-    stack: ['MTCNN', 'CNNs', 'Multi-CNN', 'Live Video'],
+      'Face detection and 20 attribute classifiers on live video: MTCNN for alignment, then multi-head CNNs in real time on webcam and benchmark datasets.',
+    role: 'Computer Vision, Face Detection, Real-time Pipeline',
+    stack: ['MTCNN', 'OpenCV', 'Multi-head CNN', 'Live Video'],
   },
   {
     slug: 'autonomous-tractor',
@@ -35,7 +35,7 @@ export const projectSummaryContent = [
     category: 'Embedded Systems / Robotics',
     year: '2023',
     summary:
-      'An autonomous tractor prototype built to drive straight, turn, and trigger emergency stops using onboard sensors, control logic, Bluetooth communication, and a custom interface.',
+      'Built a small robot tractor on Arduino with ultrasonic and IMU sensing, Bluetooth control, and a custom GUI for straight driving, turns, and e-stop.',
     role: 'Arduino Uno, Bluetooth, Sensors, GUI',
     stack: ['Arduino Uno', 'Bluetooth', 'Ultrasonic Sensor', 'MPU6050'],
   },
@@ -45,7 +45,7 @@ export const projectSummaryContent = [
     category: 'Embedded Systems / Game Development',
     year: '2023',
     summary:
-      'A multi-game embedded arcade experience that cycles through Meter Filler, Direction Obeyer, and Color Confirmer using finite state machines, joystick noise-based randomness, and a BoosterPack LCD interface.',
+      'Meter Filler, Direction Obeyer, and Color Confirmer in one MSP432 arcade loop: FSMs, joystick noise as RNG, and a BoosterPack LCD.',
     role: 'Embedded C, FSMs, SPI, GPIO',
     stack: ['Embedded C', 'Finite State Machines', 'SPI', 'MSP432'],
   },
@@ -55,7 +55,7 @@ export const projectSummaryContent = [
     category: 'Embedded Systems / Game Development',
     year: '2023',
     summary:
-      'A low-power virtual pet game themed around The Amazing World of Gumball that uses interrupt-driven gameplay, sprite-based life stages, and joystick/button controls on an embedded display.',
+      'Gumball-themed virtual pet on MSP432: pick Gumball, Darwin, or Anais, then feed and play through interrupt-driven, low-power gameplay with sprite life stages.',
     role: 'Embedded C, Interrupts, SPI, Sprite Work',
     stack: ['Embedded C', 'Interrupt Architecture', 'SPI', 'GPIO'],
   },

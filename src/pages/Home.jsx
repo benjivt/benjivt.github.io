@@ -1,20 +1,21 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import About from '../components/About';
-import ExperienceTimeline from '../components/ExperienceTimeline';
+import ExperienceMap from '../components/ExperienceMap';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
 import Interests from '../components/Interests';
 import ProjectGrid from '../components/ProjectGrid';
 import SectionNavigator from '../components/SectionNavigator';
 import { homeSections } from '../data/sections';
+import useActiveSection, { publishActiveSection } from '../hooks/useActiveSection';
 import { scrollToSection } from '../utils/scrollToSection';
 
-const homeSectionComponents = {
+export const homeSectionComponents = {
   hero: Hero,
   about: About,
   projects: ProjectGrid,
-  experience: ExperienceTimeline,
+  experience: ExperienceMap,
   interests: Interests,
   contact: Footer,
 };
@@ -22,9 +23,7 @@ const homeSectionComponents = {
 export default function Home() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState(
-    location.hash.replace('#', '') || homeSections[0]?.id || ''
-  );
+  const activeSection = useActiveSection();
   const [showSectionNavigator, setShowSectionNavigator] = useState(false);
 
   const sectionIds = useMemo(() => homeSections.map((section) => section.id), []);
@@ -78,55 +77,75 @@ export default function Home() {
     };
   }, [location.hash, location.pathname, location.state, navigate]);
 
+  // Deterministic active-section tracking: the section whose top is the
+  // last one above the viewport midline wins, so short sections (Contact,
+  // About) activate just as reliably as tall ones (Projects).
   useEffect(() => {
-    const elements = sectionIds
-      .map((sectionId) => document.getElementById(sectionId))
-      .filter(Boolean);
+    let frame = 0;
 
-    if (!elements.length) {
-      return undefined;
-    }
+    const updateActiveSection = () => {
+      frame = 0;
 
-    const visibleRatios = new Map(elements.map((element) => [element.id, 0]));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          visibleRatios.set(entry.target.id, entry.intersectionRatio);
+      const elements = sectionIds
+        .map((sectionId) => document.getElementById(sectionId))
+        .filter(Boolean);
 
-          if (entry.target.id === 'hero') {
-            setShowSectionNavigator(entry.intersectionRatio < 0.72);
-          }
-        });
-
-        const activeEntry = [...visibleRatios.entries()]
-          .filter(([, ratio]) => ratio > 0)
-          .sort((first, second) => {
-            const ratioDifference = second[1] - first[1];
-
-            if (Math.abs(ratioDifference) > 0.01) {
-              return ratioDifference;
-            }
-
-            return sectionIds.indexOf(first[0]) - sectionIds.indexOf(second[0]);
-          })[0];
-
-        if (activeEntry) {
-          setActiveSection(activeEntry[0]);
-        }
-      },
-      {
-        threshold: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
-        rootMargin: '-12% 0px -12% 0px',
+      if (!elements.length) {
+        return;
       }
-    );
 
-    elements.forEach((element) => observer.observe(element));
+      const scrollY = window.scrollY;
+      const midline = scrollY + window.innerHeight * 0.42;
+      const documentHeight = document.documentElement.scrollHeight;
+      const atBottom = scrollY + window.innerHeight >= documentHeight - 8;
 
-    return () => observer.disconnect();
+      let nextActive = elements[0].id;
+
+      if (atBottom) {
+        nextActive = elements[elements.length - 1].id;
+      } else {
+        for (const element of elements) {
+          const top = element.getBoundingClientRect().top + scrollY;
+
+          if (top <= midline) {
+            nextActive = element.id;
+          } else {
+            break;
+          }
+        }
+      }
+
+      publishActiveSection(nextActive);
+
+      const hero = document.getElementById('hero');
+      if (hero) {
+        const heroBottom = hero.getBoundingClientRect().bottom + scrollY;
+        setShowSectionNavigator(midline > heroBottom);
+      }
+    };
+
+    const scheduleUpdate = () => {
+      if (!frame) {
+        frame = window.requestAnimationFrame(updateActiveSection);
+      }
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
+
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+      publishActiveSection('');
+    };
   }, [sectionIds]);
 
   return (
-    <main>
+    <main id="main">
       {homeSections.map((section) => {
         const SectionComponent = homeSectionComponents[section.componentKey];
 
@@ -136,7 +155,10 @@ export default function Home() {
 
         return <SectionComponent key={section.id} sectionId={section.id} />;
       })}
-      <SectionNavigator activeSection={activeSection} isVisible={showSectionNavigator} />
+      <SectionNavigator
+        activeSection={activeSection}
+        isVisible={showSectionNavigator && activeSection !== 'experience'}
+      />
     </main>
   );
 }

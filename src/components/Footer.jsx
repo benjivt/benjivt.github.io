@@ -1,3 +1,53 @@
+import resumePdf from '../../info/resumes/Resume 2026.pdf';
+import { motion, useReducedMotion } from 'framer-motion';
+import { revealEnter, revealViewport, staggerStepMs } from '../utils/motionPresets';
+
+const footerHeadingVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: revealEnter,
+  },
+};
+
+const footerPanelVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+const footerLinksContainerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: staggerStepMs / 1000,
+    },
+  },
+};
+
+const footerLinkVariants = {
+  hidden: { y: 14 },
+  visible: {
+    y: 0,
+    transition: revealEnter,
+  },
+};
+
+function ResumeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 2.5L18.5 9H13V4.5ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Z"
+      />
+    </svg>
+  );
+}
+
 function GitHubIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -31,44 +81,140 @@ function MailIcon() {
   );
 }
 
-export default function Footer({ sectionId = 'contact' }) {
+function InstagramIcon() {
   return (
-    <footer id={sectionId} className="site-footer section-shell">
-      <div className="glass-panel footer-panel">
-        <div>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4A5.8 5.8 0 0 1 16.2 22H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm9.65 1.5a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"
+      />
+    </svg>
+  );
+}
+
+function BeliIcon() {
+  return (
+    <img
+      src="/social-logos/beli-icon.jpg"
+      alt=""
+      aria-hidden="true"
+      className="footer-link-logo"
+    />
+  );
+}
+
+const footerLinks = [
+  {
+    href: resumePdf,
+    label: 'Resume',
+    ariaLabel: 'Download resume (PDF)',
+    download: 'Benjamin-Adjepong-Resume.pdf',
+    external: false,
+    Icon: ResumeIcon,
+  },
+  {
+    href: 'https://github.com/benjivt',
+    label: 'GitHub',
+    external: true,
+    Icon: GitHubIcon,
+  },
+  {
+    href: 'https://www.linkedin.com/in/benjaminadjepong/',
+    label: 'LinkedIn',
+    external: true,
+    Icon: LinkedInIcon,
+  },
+  {
+    href: 'mailto:benji@vt.edu',
+    label: 'Email',
+    external: false,
+    Icon: MailIcon,
+  },
+  {
+    href: 'https://www.instagram.com/benjarooniii/',
+    label: 'Instagram',
+    ariaLabel: 'Instagram (@benjarooniii)',
+    external: true,
+    Icon: InstagramIcon,
+  },
+  {
+    href: 'https://beliapp.co/benjarooniii',
+    label: 'Beli',
+    ariaLabel: 'Beli (@benjarooniii)',
+    external: true,
+    Icon: BeliIcon,
+  },
+];
+
+function FooterLink({ link, index }) {
+  const shouldReduceMotion = useReducedMotion();
+  const { href, label, ariaLabel, external, download, Icon } = link;
+
+  const content = (
+    <>
+      <motion.span
+        className="footer-link-icon"
+        whileHover={shouldReduceMotion ? undefined : { scale: 1.12, x: 2 }}
+        transition={{ type: 'spring', stiffness: 420, damping: 24 }}
+      >
+        <Icon />
+      </motion.span>
+      <span>{label}</span>
+    </>
+  );
+
+  const className = 'footer-link-item';
+  const style = { '--footer-link-delay': `${index * 60}ms` };
+
+  const linkProps = {
+    href,
+    'aria-label': ariaLabel ?? label,
+    className,
+    style,
+    variants: footerLinkVariants,
+  };
+
+  if (download) {
+    return (
+      <motion.a {...linkProps} download={download}>
+        {content}
+      </motion.a>
+    );
+  }
+
+  if (external) {
+    return (
+      <motion.a {...linkProps} target="_blank" rel="noreferrer">
+        {content}
+      </motion.a>
+    );
+  }
+
+  return <motion.a {...linkProps}>{content}</motion.a>;
+}
+
+export default function Footer({ sectionId = 'contact' }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <footer id={sectionId} className="site-footer section-shell section-viewport-centered">
+      <motion.div
+        className="glass-panel glass-tier-3 footer-panel"
+        initial={shouldReduceMotion ? false : 'hidden'}
+        whileInView={shouldReduceMotion ? undefined : 'visible'}
+        viewport={revealViewport}
+        variants={footerPanelVariants}
+      >
+        <motion.div variants={footerHeadingVariants}>
           <p className="eyebrow">Contact</p>
           <h2 className="section-title footer-title">Let&apos;s connect.</h2>
-          <p className="section-copy">
-            Reach out by email or connect with me on GitHub and LinkedIn. I&apos;m open
-            to software engineering opportunities in AI/ML, automation, and
-            product-focused development.
-          </p>
-        </div>
-        <div className="footer-links">
-          <a
-            href="https://github.com/benjivt"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
-            <GitHubIcon />
-            <span>GitHub</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/benjaminadjepong/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
-            <LinkedInIcon />
-            <span>LinkedIn</span>
-          </a>
-          <a href="mailto:benji@vt.edu" aria-label="Email">
-            <MailIcon />
-            <span>Email</span>
-          </a>
-        </div>
-      </div>
+        </motion.div>
+        <motion.div className="footer-links" variants={footerLinksContainerVariants}>
+          {footerLinks.map((link, index) => (
+            <FooterLink key={link.label} link={link} index={index} />
+          ))}
+        </motion.div>
+      </motion.div>
     </footer>
   );
 }

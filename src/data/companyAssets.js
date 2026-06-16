@@ -2,6 +2,7 @@ import automationCreationsLogo from '../../info/logos/automation creations logo.
 import collinsAerospaceLogo from '../../info/logos/collins aerospace logo.webp';
 import humeLogo from '../../info/logos/hume logo.png';
 import microsoftLogo from '../../info/logos/microsoft logo.webp';
+import vtLogo from '../../info/about/vt-logo.webp';
 
 export const companyAssets = {
   'automation-creations': {
@@ -13,8 +14,8 @@ export const companyAssets = {
     logoScale: 1.08,
   },
   'virginia-tech-national-security-institute': {
-    logo: humeLogo,
-    logoScale: 1.08,
+    logo: vtLogo,
+    logoScale: 1.05,
   },
   'hume-center': {
     logo: humeLogo,
