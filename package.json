@@ -8,18 +8,25 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "render:resume": "node scripts/render-resume-page.mjs",
+    "fetch:xbox": "node scripts/fetch-xbox.mjs",
+    "fetch:music": "node scripts/fetch-music.mjs",
+    "music:auth": "node scripts/music-auth.mjs"
   },
   "dependencies": {
+    "@react-three/drei": "^9.114.0",
+    "@react-three/fiber": "^8.17.10",
     "framer-motion": "^11.18.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.30.1"
+    "three": "^0.169.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@vitejs/plugin-react": "^4.7.0",
     "jsdom": "^27.0.1",
+    "pdfjs-dist": "^3.11.174",
     "vite": "^5.4.19",
     "vitest": "^3.2.6"
   }

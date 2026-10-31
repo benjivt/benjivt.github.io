@@ -1,0 +1,146 @@
+{
+  "recent": [
+    {
+      "name": "16 Years",
+      "artist": "Mzbel",
+      "album": "16 Years",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/76/0d/8f/760d8ff1-a007-0c04-deee-bcd27eb8ee19/5059033423145_cover.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/16-years/1467879121?i=1467879131"
+    },
+    {
+      "name": "Swagger (feat. Stay Jay)",
+      "artist": "Ruff-N-Smooth",
+      "album": "Life Is Rough and Smooth",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/be/bf/70/mzi.jondcdrl.jpg/200x200bb.jpg",
+      "url": null
+    },
+    {
+      "name": "Alhaji (Red Gold Green)",
+      "artist": "VVIP & Patoranking",
+      "album": "Alhaji (Red Gold Green) - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6e/6c/cc/6e6ccc3f-4b18-1611-4e7b-e514ad745015/ce220a5a-d7e9-449b-8113-665369fe8bd6.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/alhaji-red-gold-green/1820400011?i=1820400021"
+    },
+    {
+      "name": "Mansa",
+      "artist": "Bisa Kdei",
+      "album": "Break Through",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cf/02/25/cf0225d9-a449-a8af-c8e3-37fb756e6ce7/859716270050_cover.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/mansa/1071132410?i=1071133005"
+    },
+    {
+      "name": "Wo!!",
+      "artist": "Olamide",
+      "album": "Lagos Nawa!",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/5b/f0/cb/5bf0cb94-6aa9-1bbc-a31f-31b10ce5bafd/888915596500_cover.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/wo/1373898300?i=1373899380"
+    }
+  ],
+  "heavyRotation": [
+    {
+      "name": "Tame",
+      "artist": null,
+      "kind": "playlist",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/1200x1200AM.PDCXS11.jpg?c1=CFBFB6&c2=F2C199&c3=2CC9D7&c4=430200&signature=ddde8e1ef3c06d66a31182c8133cfaa478e3b4c273f3f680b6c43d61d89d4d3d&t=VGFtZQ%3D%3D&tc=000000&vkey=1",
+      "url": "https://music.apple.com/us/playlist/tame/pl.u-mJy89y4TzgblKm5",
+      "mosaic": [],
+      "trackCount": 17,
+      "moreTracks": false
+    },
+    {
+      "name": "African Tunes",
+      "artist": "Benji Kofi",
+      "kind": "playlist",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/612L46YNAn3WJcslPLA61Q/200x200bb.jpg",
+      "url": "https://music.apple.com/us/playlist/african-tunes/pl.u-V9D7go9fB7RP0Kp",
+      "mosaic": [],
+      "trackCount": 100,
+      "moreTracks": true
+    },
+    {
+      "name": "MIT Scholar",
+      "artist": "Benji Kofi",
+      "kind": "playlist",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/200x200AM.PDCXS12.jpg?c1=DBDBDB&c2=E0FAE0&c3=FA7058&c4=5A6036&signature=08dac3503b8fc91ddcb9e79691365856e2cc520a10740c851d2ffbb644a7a482&t=TUlUIFNjaG9sYXI%3D&tc=FFFFFF&vkey=1",
+      "url": "https://music.apple.com/us/playlist/mit-scholar/pl.u-mJy89orIzgblKm5",
+      "mosaic": [],
+      "trackCount": 24,
+      "moreTracks": false
+    }
+  ],
+  "playlists": [
+    {
+      "name": "💃🏻🕺🏽",
+      "url": "https://music.apple.com/us/playlist/pl.u-9N9L1LJIx5joDME",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-032-Image000001/v4/e0/35/93/e0359327-fece-6c4d-1af9-ffa041c3962d/image/200x200bb.jpg",
+      "mosaic": [],
+      "trackCount": 59,
+      "moreTracks": false
+    },
+    {
+      "name": "feelin weeby",
+      "url": "https://music.apple.com/us/playlist/feelin-weeby/pl.u-aZb0NorCPbNzglM",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/116ZdzJK4NeLDysvJX26LA/200x200bb.jpg",
+      "mosaic": [],
+      "trackCount": 100,
+      "moreTracks": true
+    },
+    {
+      "name": "Tame",
+      "url": "https://music.apple.com/us/playlist/tame/pl.u-mJy89y4TzgblKm5",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/200x200AM.PDCXS11.jpg?c1=CFBFB6&c2=F2C199&c3=2CC9D7&c4=430200&signature=ddde8e1ef3c06d66a31182c8133cfaa478e3b4c273f3f680b6c43d61d89d4d3d&t=VGFtZQ%3D%3D&tc=000000&vkey=1",
+      "mosaic": [],
+      "trackCount": 17,
+      "moreTracks": false
+    },
+    {
+      "name": "K😩",
+      "url": "https://music.apple.com/us/playlist/k/pl.u-V9D7gqGsB7RP0Kp",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-032-Image000001/v4/ee/1f/73/ee1f7357-ea6a-c8cb-ed94-7f9284a19265/image/200x200bb.jpg",
+      "mosaic": [],
+      "trackCount": 100,
+      "moreTracks": true
+    },
+    {
+      "name": "wham",
+      "url": "https://music.apple.com/us/playlist/wham/pl.u-9N9L193ux5joDME",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/200x200AM.PDCXS11.jpg?c1=F6F6F4&c2=FFFF7D&c3=ED975D&c4=092E48&signature=98b7e884f1df4d1c8260025cf385e10dde857258162579bacd1a4332aaa6cc4a&t=d2hhbQ%3D%3D&tc=000000&vkey=1",
+      "mosaic": [],
+      "trackCount": 6,
+      "moreTracks": false
+    },
+    {
+      "name": "Yanni",
+      "url": "https://music.apple.com/us/playlist/yanni/pl.u-V9D7ZDKHB7RP0Kp",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/200x200AM.PDCXS11.jpg?c1=C3C3C3&c2=ECDBCA&c3=E8AD6E&c4=201F1D&signature=1fc748709126206a59d20c8857324bfc93aa0b3c1c3598ec9bdf6973a0f7e707&t=WWFubmk%3D&tc=000000&vkey=1",
+      "mosaic": [],
+      "trackCount": 14,
+      "moreTracks": false
+    },
+    {
+      "name": "Yes",
+      "url": "https://music.apple.com/us/playlist/yes/pl.u-76oN9b6TWVkZmAX",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/200x200AM.PDCXS11.jpg?c1=CACACA&c2=CEEEFD&c3=0AD011&c4=000000&signature=b07d842d4e96542fc9633d3501ff73d59c3eb7f7e623998de4dd79a66165fb9f&t=WWVz&tc=000000&vkey=1",
+      "mosaic": [],
+      "trackCount": 10,
+      "moreTracks": false
+    },
+    {
+      "name": "AW",
+      "url": "https://music.apple.com/us/playlist/aw/pl.u-76oN9RMTWVkZmAX",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/200x200AM.PDCXS11.jpg?c1=EDE1D1&c2=FFBB61&c3=48FFF8&c4=332424&signature=09c20f674f8cd301ec7b9cd6a5f6a93c7bd15f119ad3e9a95f90e4cc7dd1edd8&t=QVc%3D&tc=000000&vkey=1",
+      "mosaic": [],
+      "trackCount": 13,
+      "moreTracks": false
+    },
+    {
+      "name": "BG",
+      "url": "https://music.apple.com/us/playlist/bg/pl.u-76oN9apFWVkZmAX",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/200x200AM.PDCXS11.jpg?c1=EEEEEE&c2=BBBBBB&c3=464646&c4=111111&signature=853ddedbbcf326787fcf20de1a2249863c900d0922cc7e3c9357e215d10610b9&t=Qkc%3D&tc=000000&vkey=1",
+      "mosaic": [],
+      "trackCount": 14,
+      "moreTracks": false
+    }
+  ],
+  "updatedAt": "2026-10-25T06:18:28.148Z"
+}

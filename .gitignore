@@ -5,3 +5,7 @@ test-results
 playwright-report
 blob-report
 playwright/.cache
+*.blend1
+asset-gallery.html
+.env.local
+*.p8

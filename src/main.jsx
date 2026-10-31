@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
 import App from './App';
-import './styles/global.css';
-import './styles/glass.css';
+import { SoundProvider } from './hooks/useSound';
+import './styles/room.css';
+import './styles/ui.css';
+import './styles/screens.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <SoundProvider>
       <App />
-    </BrowserRouter>
+    </SoundProvider>
   </React.StrictMode>
 );

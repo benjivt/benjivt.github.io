@@ -1,0 +1,1064 @@
+/*
+ * Section panels, styled as if they were more low-poly objects in the room:
+ * a cream face with a chunky extruded edge like the shelves, a wood-plank header like the floor,
+ * walnut buttons and plaques like the record table, and the handwritten script from the wall sign.
+ * Tokens are in room.css.
+ */
+
+/* ---------- Where panels live ---------- */
+
+/* Floating card pinned beside an object in the room. */
+.room-card {
+  container-type: inline-size;
+  width: 540px;
+  max-height: 74vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translate(40px, -50%);
+  transform-origin: left center;
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow:
+    10px 10px 0 var(--edge),
+    10px 11px 0 1px var(--edge-dark),
+    0 34px 50px rgba(30, 10, 30, 0.4);
+  animation: card-in 0.32s cubic-bezier(0.2, 0.9, 0.3, 1.2) 0.25s both;
+  scrollbar-width: thin;
+  scrollbar-color: var(--edge) transparent;
+}
+
+/* No-WebGL fallback: a sheet sliding in from the right. */
+.panel {
+  container-type: inline-size;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  width: min(720px, 100vw);
+  overflow-y: auto;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    scale: 0.94;
+  }
+}
+
+@keyframes live {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ---------- Header: the wood plank ---------- */
+
+.ui-head {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px 10px 20px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 58px, rgba(90, 40, 10, 0.16) 58px 60px),
+    linear-gradient(180deg, var(--wood), var(--wood-2));
+  border-bottom: 6px solid var(--wood-dark);
+}
+
+.ui-title {
+  min-width: 0;
+  font-family: var(--title);
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #fff;
+  text-shadow: 0 2px 0 var(--wood-dark);
+}
+
+.ui-head-meta {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff3dc;
+  white-space: nowrap;
+}
+
+.ui-close {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: var(--walnut);
+  color: var(--paper);
+  box-shadow: 0 4px 0 var(--walnut-dark);
+  cursor: pointer;
+}
+
+.ui-head-meta + .ui-close {
+  margin-left: 0;
+}
+
+.ui-close:hover,
+.ui-close:focus-visible {
+  outline: none;
+  transform: translateY(1px);
+  box-shadow: 0 3px 0 var(--walnut-dark), 0 0 0 3px #fff3c4;
+}
+
+/* ---------- Body and shared pieces ---------- */
+
+.ui-screen {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.ui-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 20px 24px;
+}
+
+.ui-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8b5a3c;
+}
+
+.ui-label::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--paper-line);
+}
+
+.ui-h2 {
+  font-family: var(--title);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.ui-text {
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.ui-muted {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+
+/* A lighter sheet of paper sitting on the card. */
+.ui-sheet {
+  padding: 14px 16px;
+  border-radius: 5px;
+  background: var(--paper-hi);
+  box-shadow: 0 3px 0 var(--paper-line);
+}
+
+/* A walnut picture frame. */
+.ui-frame {
+  display: block;
+  padding: 6px;
+  border-radius: 4px;
+  background: var(--walnut);
+  box-shadow:
+    inset 0 -4px 0 var(--walnut-dark),
+    0 6px 14px rgba(40, 20, 20, 0.25);
+}
+
+.ui-frame img {
+  width: 100%;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.ui-polaroid {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 8px 8px 0;
+  border: 0;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 6px 14px rgba(40, 20, 30, 0.22);
+  transform: rotate(-2deg);
+}
+
+.ui-polaroid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.ui-polaroid figcaption,
+.ui-polaroid span {
+  padding: 4px 2px 8px;
+  font-family: var(--script);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ui-tag {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  background: var(--walnut);
+  color: var(--paper);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 0 var(--walnut-dark);
+}
+
+.ui-tag--live {
+  background: var(--wood-dark);
+}
+
+.ui-tag--live::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--paper);
+  animation: live 1.6s ease-in-out infinite;
+}
+
+.ui-bullets {
+  display: grid;
+  gap: 6px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.ui-bullets li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.ui-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  background: var(--wood);
+  transform: rotate(45deg);
+}
+
+.ui-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ui-chip {
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--paper-hi);
+  box-shadow: 0 2px 0 var(--paper-line);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ui-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.ui-button {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--walnut);
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 0 var(--walnut-dark);
+  cursor: pointer;
+}
+
+.ui-button--light {
+  background: var(--paper-hi);
+  color: var(--ink);
+  box-shadow: 0 4px 0 var(--edge);
+}
+
+.ui-button:hover,
+.ui-button:focus-visible {
+  outline: none;
+  transform: translateY(1px);
+  box-shadow: 0 3px 0 var(--walnut-dark), 0 0 0 3px var(--wood);
+}
+
+.ui-button--light:hover,
+.ui-button--light:focus-visible {
+  box-shadow: 0 3px 0 var(--edge), 0 0 0 3px var(--wood);
+}
+
+/* Rows: songs, games, projects, contacts. */
+.ui-rows {
+  display: grid;
+  gap: 6px;
+}
+
+.ui-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 5px;
+  background: var(--paper-hi);
+  box-shadow: 0 3px 0 var(--paper-line);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+}
+
+a.ui-row,
+button.ui-row {
+  cursor: pointer;
+}
+
+a.ui-row:hover,
+a.ui-row:focus-visible,
+button.ui-row:hover,
+button.ui-row:focus-visible {
+  outline: none;
+  box-shadow: 0 3px 0 var(--wood);
+}
+
+.ui-row[aria-pressed='true'] {
+  background: #fff;
+  box-shadow:
+    inset 4px 0 0 var(--wood),
+    0 3px 0 var(--wood);
+}
+
+.ui-row-art {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 3px;
+  background: var(--paper-line);
+  object-fit: cover;
+}
+
+.ui-row-text {
+  display: grid;
+  min-width: 0;
+}
+
+.ui-row-title,
+.ui-row-sub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ui-row-title {
+  font-size: 14.5px;
+  font-weight: 800;
+}
+
+.ui-row-sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.ui-row-go {
+  margin-left: auto;
+  font-weight: 900;
+  color: var(--wood-dark);
+}
+
+/* A walnut plaque for a single big number. */
+.ui-plaque {
+  display: grid;
+  justify-items: center;
+  padding: 14px 16px;
+  border-radius: 5px;
+  background: var(--walnut);
+  color: var(--paper);
+  box-shadow: inset 0 -5px 0 var(--walnut-dark);
+  text-align: center;
+}
+
+.ui-plaque-value {
+  font-family: var(--title);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--paper-hi);
+}
+
+.ui-plaque-label {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* A sticky note, like the credits note on the bookshelf. */
+.ui-note {
+  padding: 12px 14px;
+  background: #fff3a8;
+  color: #3b2f0a;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 6px 12px rgba(40, 30, 0, 0.18);
+  transform: rotate(-1deg);
+}
+
+/* ---------- About: the photo on the desk ---------- */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.about-strengths {
+  margin-top: 10px;
+}
+
+.about-toolbox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about-toolbox > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ---------- Projects: the boards and headset on the desk ---------- */
+
+.project-detail,
+.project-groups,
+.project-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-detail {
+  gap: 10px;
+}
+
+.project-groups {
+  gap: 14px;
+}
+
+.project-group {
+  gap: 8px;
+}
+
+.project-hero img {
+  height: 210px;
+}
+
+/* ---------- Film and Travel: photo walls ---------- */
+
+.photo-print {
+  align-self: center;
+  max-width: 100%;
+  padding: 12px 12px 0;
+}
+
+/* Photos keep their own shape instead of the square polaroid crop. */
+.photo-print img {
+  width: auto;
+  max-width: 100%;
+  max-height: 340px;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.photo-print figcaption {
+  font-size: 22px;
+}
+
+/* Thumbnails get the polaroid's wide bottom margin instead of a caption. */
+.photos .ui-snap {
+  padding-bottom: 18px;
+}
+
+.photo-blanks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  padding: 4px;
+}
+
+.photo-blanks li:nth-child(2) {
+  transform: rotate(2deg);
+}
+
+.photo-blank {
+  display: block;
+  aspect-ratio: 1;
+  background: linear-gradient(160deg, #3b3340, #1f1a24);
+}
+
+/* ---------- Sports and Outdoors: hobby snapshots ---------- */
+
+.hobby-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hobby-photo img {
+  height: 220px;
+}
+
+.ui-snaps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 16px 14px;
+  padding: 6px 4px 4px;
+}
+
+.ui-snap {
+  position: relative;
+  width: 100%;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.ui-snaps li:nth-child(even) .ui-snap {
+  transform: rotate(2deg);
+}
+
+.ui-snap span {
+  font-size: 18px;
+}
+
+.ui-snap:hover,
+.ui-snap:focus-visible,
+.ui-snap[aria-pressed='true'] {
+  outline: none;
+  transform: translateY(-3px) rotate(0deg);
+  box-shadow: 0 10px 18px rgba(40, 20, 30, 0.28);
+}
+
+/* A push pin on the selected snapshot. */
+.ui-snap[aria-pressed='true']::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffb3d1, #e0457f);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Gaming: the controller ---------- */
+
+.gamertag {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gamertag-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.gamertag-text {
+  display: grid;
+}
+
+.gamertag-link {
+  font-family: var(--title);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a.gamertag-link:hover,
+a.gamertag-link:focus-visible {
+  outline: none;
+  color: var(--wood-dark);
+}
+
+.gamertag-score {
+  margin-left: auto;
+  padding: 8px 14px;
+}
+
+.gamertag-score .ui-plaque-value {
+  font-size: 22px;
+}
+
+.gamertag-hint {
+  margin-left: auto;
+}
+
+/* The game library: portrait covers standing on a walnut shelf. */
+.library {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px 12px;
+  padding: 14px 14px 12px;
+  border-radius: 5px;
+  background: var(--walnut);
+  box-shadow: inset 0 -6px 0 var(--walnut-dark);
+}
+
+.library-game {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  color: var(--paper);
+}
+
+.library-cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  aspect-ratio: 2 / 3;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--walnut-dark);
+  box-shadow:
+    0 4px 0 var(--walnut-dark),
+    0 8px 14px rgba(0, 0, 0, 0.3);
+}
+
+.library-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Square box art when a game has no poster: shown whole, centred on the dark case. */
+.library-cover .library-square {
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.library-blank {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--title);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.library-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: var(--wood-dark);
+  color: var(--paper);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.library-title,
+.library-note {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.library-title {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.library-note {
+  font-size: 11.5px;
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+
+/* ---------- Music: the record crate ---------- */
+
+.crate {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border-radius: 5px;
+  background: var(--walnut);
+  box-shadow: inset 0 -6px 0 var(--walnut-dark);
+}
+
+.crate-sleeve {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px 4px 6px;
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.crate-sleeve:hover,
+.crate-sleeve:focus-visible {
+  outline: none;
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 2px var(--wood);
+}
+
+.crate-sleeve > img,
+.crate-mosaic {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.crate-mosaic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  background: var(--paper-line);
+}
+
+.crate-mosaic img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.crate-name,
+.crate-sub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crate-name {
+  margin-top: 2px;
+  font-size: 12.5px;
+  font-weight: 800;
+}
+
+.crate-sub {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Resume ---------- */
+
+/* Bar under the printed page while the camera is reading it. */
+.paper-controls {
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 7px;
+  background: var(--walnut);
+  box-shadow:
+    0 5px 0 var(--walnut-dark),
+    0 16px 26px rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+  animation: card-in 0.3s ease 0.4s both;
+}
+
+.paper-controls a,
+.paper-controls button {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--paper);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.paper-controls-close {
+  width: 38px;
+  justify-content: center;
+  padding: 0;
+}
+
+.paper-controls a:hover,
+.paper-controls button:hover,
+.paper-controls a:focus-visible,
+.paper-controls button:focus-visible {
+  outline: none;
+  background: rgba(255, 248, 234, 0.14);
+}
+
+/* Under the Film prints and the Travel polaroids while they're open. */
+.photo-controls {
+  position: absolute;
+  bottom: 7vh;
+  left: 50vw;
+  align-items: center;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+.photo-controls-label {
+  padding: 0 4px 0 10px;
+  font-family: var(--title);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--paper-hi);
+}
+
+.photo-controls-count {
+  padding-right: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--paper) 70%, transparent);
+}
+
+/* A photo opened full size over the room. */
+.photo-viewer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: rgba(20, 12, 24, 0.72);
+  backdrop-filter: blur(4px);
+  animation: card-in 0.2s ease both;
+}
+
+.photo-viewer-print {
+  max-width: min(80vw, 900px);
+  padding: 14px 14px 0;
+  transform: rotate(-1deg);
+}
+
+.photo-viewer-print img {
+  width: auto;
+  max-width: 100%;
+  max-height: 72vh;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.photo-viewer-print figcaption {
+  font-size: 26px;
+}
+
+.photo-viewer-nav,
+.photo-viewer-close {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  background: var(--walnut);
+  color: var(--paper);
+  box-shadow: 0 4px 0 var(--walnut-dark);
+  cursor: pointer;
+}
+
+.photo-viewer-nav {
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  margin-top: -26px;
+  font: 800 30px/1 var(--body);
+}
+
+.photo-viewer-nav--prev {
+  left: 4vw;
+}
+
+.photo-viewer-nav--next {
+  right: 4vw;
+}
+
+.photo-viewer-close {
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+}
+
+.photo-viewer-nav:hover,
+.photo-viewer-nav:focus-visible,
+.photo-viewer-close:hover,
+.photo-viewer-close:focus-visible {
+  outline: none;
+  box-shadow:
+    0 3px 0 var(--walnut-dark),
+    0 0 0 3px var(--wood);
+}
+
+/* Resume viewer, used only by the no-WebGL fallback. */
+.resume-body {
+  flex: 1;
+  height: calc(100vh - 110px);
+}
+
+.resume-frame {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 3px 0 var(--paper-line);
+}
+
+/* ---------- No-WebGL fallback page ---------- */
+
+.fallback {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.fallback-intro {
+  margin-bottom: 28px;
+}
+
+.fallback .room-sign-title {
+  font-size: clamp(40px, 7vw, 72px);
+}
+
+.dock-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.dock-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 18px 20px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: left;
+  box-shadow: 6px 6px 0 var(--edge);
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.dock-item:hover,
+.dock-item:focus-visible {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow:
+    8px 8px 0 var(--edge),
+    0 0 0 3px var(--wood);
+}
+
+.dock-item-label {
+  font-family: var(--title);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.dock-item-hint {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* ---------- Narrow containers: cards and the fallback sheet ---------- */
+
+@container (max-width: 420px) {
+  .ui-head {
+    padding: 10px 12px 8px 16px;
+  }
+
+  .ui-head-meta {
+    display: none;
+  }
+
+  .ui-title {
+    font-size: 26px;
+  }
+
+  .ui-body {
+    padding: 16px 14px 22px;
+  }
+
+  .about-intro {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 14px;
+  }
+}

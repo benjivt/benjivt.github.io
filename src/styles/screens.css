@@ -1,0 +1,1380 @@
+/*
+ * The device screens in the room, each dressed like the real thing:
+ * the laptop runs a macOS-style app, the TV a console-style dashboard, the phone an iOS-style app.
+ * The no-WebGL fallback sheet reuses them (.panel--laptop / --tv / --phone).
+ */
+
+:root {
+  --system: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --mac-blue: #0a64d8;
+}
+
+/* ---------- The screen itself ---------- */
+
+/* drei's Html wrapper clips with an inline overflow: hidden, and its CSS-3D layout box sits far off-screen,
+   so the browser would scroll it to "reveal" whatever takes focus and the screen would slide away.
+   clip still clips, but can't be scrolled. */
+.device-wrapper {
+  overflow: clip !important;
+}
+
+.device {
+  container-type: inline-size;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--system);
+  animation: screen-on 0.45s ease 0.35s both;
+}
+
+@keyframes screen-on {
+  from {
+    opacity: 0;
+    filter: brightness(1.5);
+  }
+}
+
+.device-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+.device--laptop,
+.device--tv {
+  background: #000;
+}
+
+.device--laptop .device-body,
+.device--tv .device-body {
+  overflow: hidden;
+}
+
+.device-loading {
+  padding: 24px;
+  color: #8e8e93;
+}
+
+.panel--laptop,
+.panel--tv,
+.panel--phone {
+  font-family: var(--system);
+}
+
+/* ---------- Laptop: Career as a macOS app ---------- */
+
+.roadmap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #1d1d1f;
+  font-family: var(--system);
+  font-size: 13px;
+}
+
+.mac-bar {
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 44px;
+  padding: 0 14px;
+  background: #f6f5f4;
+  border-bottom: 1px solid #dcdbd9;
+}
+
+.mac-lights {
+  display: flex;
+  gap: 8px;
+}
+
+.mac-light {
+  display: grid;
+  place-items: center;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ff5f57;
+  box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.15);
+}
+
+.mac-light--min {
+  background: #febc2e;
+}
+
+.mac-light--zoom {
+  background: #28c840;
+}
+
+.mac-light--close {
+  color: #7a1d17;
+  cursor: pointer;
+}
+
+/* Like macOS, the × only shows while the pointer is over the lights. */
+.mac-light--close svg {
+  opacity: 0;
+}
+
+.mac-lights:hover .mac-light--close svg,
+.mac-light--close:focus-visible svg {
+  opacity: 1;
+}
+
+.mac-light--close:focus-visible {
+  outline: 2px solid var(--mac-blue);
+  outline-offset: 2px;
+}
+
+.mac-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3a3a3c;
+}
+
+.mac-bar-end {
+  justify-self: end;
+}
+
+.roadmap-stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6e6e73;
+}
+
+.roadmap-stepper button {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #3a3a3c;
+  font: 600 16px/1 var(--system);
+  cursor: pointer;
+}
+
+.roadmap-stepper button:hover:not(:disabled),
+.roadmap-stepper button:focus-visible {
+  outline: none;
+  background: #e5e4e2;
+}
+
+.roadmap-stepper button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.roadmap-app {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
+.roadmap-side {
+  padding: 10px 8px;
+  overflow-y: auto;
+  background: #efedf0;
+  border-right: 1px solid #dcdbd9;
+}
+
+.roadmap-side-label {
+  padding: 4px 10px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8e8e93;
+}
+
+.roadmap-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.roadmap-item img {
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+  border-radius: 6px;
+  background: #fff;
+  object-fit: contain;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-item b,
+.roadmap-item small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.roadmap-item b {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.roadmap-item small {
+  font-size: 11px;
+  color: #8e8e93;
+}
+
+.roadmap-item:hover,
+.roadmap-item:focus-visible {
+  outline: none;
+  background: #e2e0e5;
+}
+
+.roadmap-item[aria-pressed='true'] {
+  background: var(--mac-blue);
+  color: #fff;
+}
+
+.roadmap-item[aria-pressed='true'] small {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.roadmap-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  gap: 18px;
+  align-content: start;
+  padding: 22px 26px;
+  overflow-y: auto;
+}
+
+.roadmap-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.roadmap-logo {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #fff;
+  object-fit: contain;
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.roadmap-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e8f0fe;
+  color: var(--mac-blue);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.roadmap-tag--live::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #28c840;
+}
+
+.roadmap-team {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.roadmap-role {
+  font-size: 13px;
+  color: #6e6e73;
+}
+
+.roadmap-recap {
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.roadmap-label {
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8e8e93;
+}
+
+.roadmap-highlights {
+  padding: 4px 12px;
+  border-radius: 10px;
+  background: #f5f5f7;
+}
+
+.roadmap-highlights li {
+  position: relative;
+  padding: 8px 0 8px 18px;
+  font-size: 13px;
+  line-height: 1.4;
+  border-bottom: 1px solid #e3e3e6;
+}
+
+.roadmap-highlights li:last-child {
+  border-bottom: 0;
+}
+
+.roadmap-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mac-blue);
+}
+
+.roadmap-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.roadmap-card {
+  margin: 0;
+  padding: 14px;
+  border-radius: 12px;
+  background: #f5f5f7;
+}
+
+.roadmap-stat {
+  display: block;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--mac-blue);
+}
+
+.roadmap-quote blockquote {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #3a3a3c;
+}
+
+.roadmap-quote figcaption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  font-size: 11.5px;
+  color: #6e6e73;
+}
+
+.roadmap-quote figcaption img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.roadmap-quote b {
+  display: block;
+  font-size: 12px;
+  color: #1d1d1f;
+}
+
+@container (max-width: 760px) {
+  .roadmap-app {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .roadmap-detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ---------- TV: Projects as a console dashboard ---------- */
+
+.tv-screen {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #08080c;
+  color: #fff;
+  font-family: var(--system);
+}
+
+/* The selected title's poster, blown up and blurred behind everything, faded into the dark. */
+.tv-art {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 72%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.tv-art--blur {
+  filter: blur(26px) brightness(0.6) saturate(1.2);
+  transform: scale(1.15);
+}
+
+/* The selected title's poster, sharp, on the right. */
+.tv-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: start;
+}
+
+.tv-feature-poster {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Until a poster is added: the title on a dusky gradient. */
+.tv-poster-blank {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background: linear-gradient(160deg, #3a2d55, #14121c 70%);
+  color: rgba(255, 255, 255, 0.82);
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.tv-feature .tv-poster-blank {
+  font-size: 22px;
+}
+
+.tv-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #08080c 26%, rgba(8, 8, 12, 0.75) 48%, rgba(8, 8, 12, 0.1) 75%),
+    linear-gradient(0deg, #08080c 30%, rgba(8, 8, 12, 0) 58%);
+}
+
+.tv-top,
+.tv-hero,
+.tv-rail {
+  position: relative;
+  z-index: 1;
+}
+
+.tv-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 26px 40px 0 52px;
+}
+
+.tv-title {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.tv-meta {
+  margin-left: auto;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.tv-title + .tv-close {
+  margin-left: auto;
+}
+
+.tv-close {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.tv-close:hover,
+.tv-close:focus-visible {
+  outline: none;
+  background: #fff;
+  color: #08080c;
+}
+
+.tv-hero {
+  flex: 1;
+  min-height: 0;
+  max-width: 700px;
+  padding: 22px 52px 0;
+}
+
+.tv-kicker {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7cc7ff;
+}
+
+.tv-name {
+  margin: 8px 0 10px;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.tv-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 18px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tv-notes {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.tv-notes li {
+  position: relative;
+  padding-left: 16px;
+}
+
+.tv-notes li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7cc7ff;
+}
+
+.tv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 18px;
+}
+
+.tv-chips li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.tv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #fff;
+  color: #08080c;
+  font-size: 17px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+
+.tv-button:hover,
+.tv-button:focus-visible {
+  outline: none;
+  transform: scale(1.04);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.35);
+}
+
+.tv-rail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 30px;
+  padding: 0 40px 28px 52px;
+}
+
+.tv-group h3 {
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.tv-group ul {
+  display: flex;
+  gap: 14px;
+}
+
+.tv-tile {
+  width: 178px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tv-tile img {
+  width: 178px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tv-tile span {
+  display: block;
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.tv-tile:focus-visible {
+  outline: none;
+}
+
+.tv-tile[aria-pressed='true'] img,
+.tv-tile:focus-visible img {
+  transform: scale(1.07);
+  box-shadow:
+    0 0 0 4px #fff,
+    0 14px 30px rgba(0, 0, 0, 0.6);
+}
+
+.tv-tile[aria-pressed='true'] span {
+  color: #fff;
+}
+
+/* Watching: rows of portrait posters that scroll sideways instead of wrapping. */
+/* Watching: the selected title on the left over a row of posters per category; its poster on the right. */
+.tv-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 40px;
+  padding: 12px 64px 24px 52px;
+}
+
+.tv-left {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tv-hero--compact {
+  flex: none;
+  max-width: 760px;
+  padding: 0;
+}
+
+.tv-hero--compact .tv-name {
+  margin: 6px 0 6px;
+  font-size: 38px;
+}
+
+.tv-hero--compact .tv-summary {
+  -webkit-line-clamp: 2;
+  font-size: 17px;
+}
+
+.tv-hero--compact .tv-chips {
+  margin: 10px 0 0;
+}
+
+/* Rows scroll sideways as categories fill up; the stack scrolls if more categories are added. */
+.tv-rows {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.tv-row h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.63);
+}
+
+.tv-row ul {
+  display: flex;
+  gap: 12px;
+  margin: 0 -8px;
+  padding: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tv-tile--poster {
+  flex-shrink: 0;
+  width: 72px;
+}
+
+.tv-tile--poster .tv-tile-poster {
+  display: block;
+  width: 72px;
+  height: 108px;
+  border-radius: 8px;
+  object-fit: cover;
+  font-size: 12px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tv-tile--poster[aria-pressed='true'] .tv-tile-poster,
+.tv-tile--poster:focus-visible .tv-tile-poster {
+  transform: scale(1.07);
+  box-shadow:
+    0 0 0 4px #fff,
+    0 14px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Phone: Contact as an iOS app ---------- */
+
+.device--phone {
+  border-radius: 38px;
+  border: 8px solid #08090f;
+  background: #f2f2f7;
+  color: #000;
+}
+
+.device--phone .device-body {
+  padding-bottom: 22px;
+}
+
+.device-status {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 22px 2px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.device-status-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.device-home {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  width: 120px;
+  height: 5px;
+  margin-left: -60px;
+  border-radius: 3px;
+  background: #000;
+}
+
+.contact {
+  min-height: 100%;
+  background: #f2f2f7;
+  color: #000;
+  font-family: var(--system);
+}
+
+.ios-head {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 14px 0 16px;
+}
+
+.ios-close {
+  align-self: flex-end;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #e3e3e8;
+  color: #6c6c70;
+  cursor: pointer;
+}
+
+.ios-close:hover,
+.ios-close:focus-visible {
+  outline: none;
+  background: #d1d1d6;
+}
+
+.ios-title {
+  margin-top: 2px;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.contact-blurb {
+  padding: 4px 16px 14px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #6c6c70;
+}
+
+.contact-section {
+  padding: 0 16px 6px 30px;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #8e8e93;
+}
+
+.contact-group {
+  margin: 0 14px 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 46px;
+  padding: 0 12px;
+  color: #000;
+  text-decoration: none;
+}
+
+.contact-row:hover,
+.contact-row:focus-visible {
+  outline: none;
+  background: #e5e5ea;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 29px;
+  height: 29px;
+  border-radius: 7px;
+  color: #fff;
+}
+
+.contact-glyph {
+  font: 800 14px/1 var(--system);
+}
+
+.contact-row-body {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-group li + li .contact-row-body {
+  border-top: 0.5px solid #c6c6c8;
+}
+
+.contact-label {
+  font-size: 15.5px;
+  font-weight: 500;
+}
+
+.contact-handle {
+  margin-left: auto;
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #8e8e93;
+}
+
+.contact-chevron {
+  font-size: 18px;
+  font-weight: 600;
+  color: #c4c4c7;
+}
+
+/* ---------- Headset: Projects inside the Quest 3 ---------- */
+
+/* The view through the lenses, opening like eyes once the camera has flown in. */
+.vr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: #f2f4f8;
+  font-family: var(--system);
+  animation: vr-open 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) 0.9s both;
+}
+
+@keyframes vr-open {
+  from {
+    opacity: 0;
+    clip-path: ellipse(0% 0% at 50% 50%);
+  }
+  to {
+    opacity: 1;
+    clip-path: ellipse(80% 80% at 50% 50%);
+  }
+}
+
+/* A Horizon-style home: dusk sky, a warm horizon, a dark floor with a grid running away. */
+.vr-env {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 60%, rgba(255, 170, 130, 0.38), transparent 65%),
+    linear-gradient(180deg, #11162c 0%, #262b55 40%, #5d4c7d 59.5%, #1b1827 60%, #0b0a12 100%);
+}
+
+.vr-env::after {
+  content: '';
+  position: absolute;
+  left: -50%;
+  right: -50%;
+  top: 60%;
+  height: 80%;
+  background:
+    repeating-linear-gradient(90deg, rgba(160, 150, 255, 0.16) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(0deg, rgba(160, 150, 255, 0.16) 0 1px, transparent 1px 80px);
+  transform: perspective(500px) rotateX(72deg);
+  transform-origin: top center;
+  mask-image: linear-gradient(180deg, transparent, #000 30%);
+}
+
+.vr-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  perspective: 1600px;
+}
+
+/* The app window floating at eye level. */
+.vr-window {
+  container-type: inline-size;
+  width: min(1120px, 84vw);
+  height: min(640px, 70vh);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(22, 24, 33, 0.8);
+  backdrop-filter: blur(24px) saturate(1.2);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.55);
+  transform: rotateX(3deg);
+}
+
+/* The bar under every Quest window you'd grab to move it. */
+.vr-grab {
+  width: 120px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Universal menu. */
+.vr-dock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px 8px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(22, 24, 33, 0.82);
+  backdrop-filter: blur(20px);
+  color: #e9ecf2;
+}
+
+.vr-dock-meta,
+.vr-dock-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.vr-dock-meta {
+  background: #0081fb;
+  color: #fff;
+}
+
+.vr-dock-sep {
+  width: 1px;
+  height: 22px;
+  margin: 0 4px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.vr-dock-time {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* The lenses: dark edges and the shadow of the nose bridge. */
+.vr-lens {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 10% 15% at 50% 104%, rgba(0, 0, 0, 0.8), transparent 100%),
+    radial-gradient(ellipse 72% 80% at 50% 48%, transparent 60%, rgba(0, 0, 0, 0.55) 82%, #000 100%);
+}
+
+/* App chrome */
+.vr-app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.vr-titlebar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 18px 12px 20px;
+}
+
+.vr-app-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0081fb, #7b5cff);
+  color: #fff;
+}
+
+.vr-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.vr-meta {
+  margin-left: auto;
+  font-size: 13px;
+  color: #a9b0bd;
+}
+
+.vr-title + .vr-close {
+  margin-left: auto;
+}
+
+.vr-close {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+}
+
+.vr-close:hover,
+.vr-close:focus-visible {
+  outline: none;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.vr-app-body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+}
+
+.vr-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 14px 18px;
+}
+
+.vr-nav-item {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #c9cfda;
+  font: 600 14px var(--system);
+  text-align: left;
+  cursor: pointer;
+}
+
+.vr-nav-item:hover,
+.vr-nav-item:focus-visible {
+  outline: none;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.vr-nav-item[aria-pressed='true'] {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+
+.vr-main {
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 4px 22px 22px 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.vr-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.vr-detail-art {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.vr-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7cb8ff;
+}
+
+.vr-detail-title {
+  margin: 6px 0 8px;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.vr-detail-text {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #d3d8e2;
+}
+
+.vr-notes {
+  display: grid;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: #b9c0cc;
+}
+
+.vr-notes li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.vr-notes li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #7cb8ff;
+}
+
+.vr-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 16px;
+}
+
+.vr-chips li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+  font-size: 12.5px;
+}
+
+.vr-button {
+  display: inline-flex;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #0081fb;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.vr-button:hover,
+.vr-button:focus-visible {
+  outline: none;
+  background: #2b95ff;
+}
+
+.vr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+  gap: 12px;
+}
+
+.vr-tile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px;
+  border: 0;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+.vr-tile img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.vr-tile-name,
+.vr-tile-sub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.vr-tile-name {
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.vr-tile-sub {
+  font-size: 12px;
+  color: #a9b0bd;
+}
+
+.vr-tile:hover,
+.vr-tile:focus-visible {
+  outline: none;
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.vr-tile[aria-pressed='true'] {
+  background: rgba(0, 129, 251, 0.16);
+  box-shadow: inset 0 0 0 2px #0081fb;
+}
+
+@container (max-width: 820px) {
+  .vr-app-body,
+  .vr-detail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .vr-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 18px 10px;
+  }
+
+  .vr-main {
+    padding-left: 18px;
+  }
+
+  .vr-detail-art {
+    aspect-ratio: 16 / 7;
+  }
+}

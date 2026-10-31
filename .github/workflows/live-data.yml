@@ -1,0 +1,63 @@
+name: Refresh live data
+
+# Once a day, pull the latest Xbox (OpenXBL) and Apple Music data into public/data/*.json.
+# Changed files are committed to main, then the site is redeployed.
+on:
+  schedule:
+    - cron: '17 9 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: live-data-refresh
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Each source can fail on its own (e.g. an expired Apple token) without blocking the other.
+      - name: Fetch Xbox data
+        continue-on-error: true
+        env:
+          OPENXBL_KEY: ${{ secrets.OPENXBL_KEY }}
+        run: node scripts/fetch-xbox.mjs
+
+      - name: Fetch Apple Music data
+        continue-on-error: true
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_KEY_ID: ${{ secrets.APPLE_KEY_ID }}
+          APPLE_MUSIC_PRIVATE_KEY: ${{ secrets.APPLE_MUSIC_PRIVATE_KEY }}
+          APPLE_MUSIC_USER_TOKEN: ${{ secrets.APPLE_MUSIC_USER_TOKEN }}
+        run: node scripts/fetch-music.mjs
+
+      - name: Commit if changed
+        id: commit
+        run: |
+          git add -N public/data
+          if git diff --quiet -- public/data; then echo "No changes"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          git commit -m "Refresh live data"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows, but a dispatch does.
+      - name: Redeploy the site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
