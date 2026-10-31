@@ -5,7 +5,8 @@ import { chromium } from '@playwright/test';
 
 const PDF = new URL('../info/resumes/Resume 2026.pdf', import.meta.url);
 const OUT = new URL('../info/resumes/resume-page.webp', import.meta.url);
-const WIDTH = 1700;
+// Wide enough for the paper close-up on a high-DPI screen; wider only adds download weight.
+const WIDTH = 1200;
 
 const [pdfData, lib, worker] = await Promise.all([
   readFile(PDF),
@@ -32,7 +33,7 @@ const dataUrl = await page.evaluate(
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     await pdfPage.render({ canvasContext: ctx, viewport }).promise;
-    return canvas.toDataURL('image/webp', 0.92);
+    return canvas.toDataURL('image/webp', 0.85);
   },
   { pdfBase64: pdfData.toString('base64'), workerSource: worker, width: WIDTH }
 );

@@ -12,7 +12,7 @@ import { CloseIcon } from '../components/ScreenHeader';
 import { SurfaceContext } from '../components/Surface';
 import resumePage from '../../info/resumes/resume-page.webp';
 import nsbePhoto from '../../info/about/scenes/nsbe-chicago.webp';
-import headshot from '../../info/headshot/headshot.png';
+import headshot from '../../info/headshot/headshot.webp';
 
 const MODEL_URL = '/models/room.glb';
 const DRACO_URL = '/draco/';
@@ -66,6 +66,8 @@ function Room({ hoveredId, activeId, onHover, onSelect, onReady }) {
   }, [scene]);
 
   const maxAnisotropy = useThree((state) => state.gl.capabilities.getMaxAnisotropy());
+  // The canvas draws on demand, so changes made outside React ask for a frame.
+  const invalidate = useThree((state) => state.invalidate);
 
   useEffect(() => {
     [
@@ -96,7 +98,8 @@ function Room({ hoveredId, activeId, onHover, onSelect, onReady }) {
       mesh.receiveShadow = false;
       mesh.material = new THREE.MeshStandardMaterial({ map: texture, roughness: 0.85 });
     });
-  }, [scene, nsbeTexture, headshotTexture, maxAnisotropy]);
+    invalidate();
+  }, [scene, nsbeTexture, headshotTexture, maxAnisotropy, invalidate]);
 
   useEffect(() => {
     Object.entries(hotspots).forEach(([id, { meshes }]) => {
@@ -109,7 +112,8 @@ function Room({ hoveredId, activeId, onHover, onSelect, onReady }) {
         mesh.material.emissiveIntensity = lit ? 0.35 : 0;
       });
     });
-  }, [hotspots, hoveredId, activeId]);
+    invalidate();
+  }, [hotspots, hoveredId, activeId, invalidate]);
 
   useEffect(() => {
     onReady(hotspots);
@@ -656,7 +660,7 @@ function shortestAngle(from, to) {
 // Flies the camera between the overview and each section's viewpoint; free orbit only at home.
 function CameraRig({ hotspots, framings, focusId, reduceMotion }) {
   const controls = useRef(null);
-  const { camera, size } = useThree();
+  const { camera, size, invalidate } = useThree();
   const homeZoom = Math.min(size.width / 8.4, size.height / 6.6);
   const goal = useRef(null);
   const state = useRef({
@@ -731,7 +735,8 @@ function CameraRig({ hotspots, framings, focusId, reduceMotion }) {
         home: true,
       };
     }
-  }, [focusId, hotspots, framings, homeZoom, size.width, size.height, camera]);
+    invalidate();
+  }, [focusId, hotspots, framings, homeZoom, size.width, size.height, camera, invalidate]);
 
   useFrame((_, delta) => {
     const s = state.current;
@@ -760,6 +765,9 @@ function CameraRig({ hotspots, framings, focusId, reduceMotion }) {
         c.enabled = true;
         c.update();
       }
+    } else {
+      // keep drawing until the flight lands
+      invalidate();
     }
   });
 
@@ -810,7 +818,10 @@ export default function RoomCanvas({ hoveredId, activeId, onHover, onSelect, onC
   return (
     <Canvas
       shadows
-      dpr={[1, 2]}
+      // Draw only when something changes (a flight, orbiting, a hover) instead of 60 times a second while
+      // idle, and cap the resolution so big high-DPI screens don't redraw millions of extra pixels.
+      frameloop="demand"
+      dpr={[1, 1.5]}
       gl={{ antialias: true }}
       onPointerMissed={(event) => {
         if (!fromCanvas(event)) return;
