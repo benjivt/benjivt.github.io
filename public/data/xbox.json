@@ -5,14 +5,34 @@
   "avatar": "https://images-eds-ssl.xboxlive.com/image?url=wHwbXKif8cus8csoZ03RW3apWESZjav65Yncai8aRmVbSlZ3zqRpg1sdxEje_JmF9fbbNaw7w_DwgUNd_IsJn5GVBv01wA5OXrs.hhvueHxhB8gZS4n6AH762o_FJ3COFBsPcz_47sA9jh8UN1KZPLMCByeJhlJ9VkXQ8juUrA8-&format=png",
   "recent": [
     {
+      "name": "Gears of War: E-Day",
+      "lastPlayed": "2026-11-01T06:18:00.030478Z",
+      "image": "https://store-images.s-microsoft.com/image/apps.10362.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.10a73531-4bf2-4be3-ac6c-45a529b8e30c",
+      "achievements": {
+        "earned": 6,
+        "gamerscore": 90
+      },
+      "poster": "https://store-images.s-microsoft.com/image/apps.58579.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.0c0f53d8-d3af-4c48-a1a6-22b31c4ec463"
+    },
+    {
+      "name": "SpeedRunners 2: King of Speed",
+      "lastPlayed": "2026-11-01T06:12:58.6857458Z",
+      "image": "https://store-images.s-microsoft.com/image/apps.25269.14327242010981927.a5495c37-2e09-4b3f-82a1-e015a8eb734a.9945ab02-07e9-4a94-b073-d0397a277c86",
+      "achievements": {
+        "earned": 26,
+        "gamerscore": 680
+      },
+      "poster": "https://store-images.s-microsoft.com/image/apps.34223.14327242010981927.a5495c37-2e09-4b3f-82a1-e015a8eb734a.ba1ba654-43f4-494c-af69-2f04015448e2"
+    },
+    {
       "name": "Fortnite",
       "lastPlayed": "2026-10-24T18:18:17.4016547Z",
-      "image": "https://store-images.s-microsoft.com/image/apps.20392.70702278257994163.6d75301b-59c3-4a73-b70c-5901ae9cbb44.24e2eab9-1b75-4157-ba8b-006f4624d839",
+      "image": "https://store-images.s-microsoft.com/image/apps.31130.70702278257994163.f7265b8a-f10e-49c4-8115-73c4d800af63.641ad74a-edd4-40c9-8049-3bb73387d09a",
       "achievements": {
         "earned": 0,
         "gamerscore": 0
       },
-      "poster": "https://store-images.s-microsoft.com/image/apps.17283.70702278257994163.6d75301b-59c3-4a73-b70c-5901ae9cbb44.bd4108fb-c5af-4a9a-90c5-9a25a46d76a1"
+      "poster": "https://store-images.s-microsoft.com/image/apps.52548.70702278257994163.f7265b8a-f10e-49c4-8115-73c4d800af63.a0e057ff-c216-4206-a6b9-65bfc7d54fb0"
     },
     {
       "name": "Call of Duty®",
@@ -25,16 +45,6 @@
       "poster": "https://store-images.s-microsoft.com/image/apps.30472.13966330883349940.9a0bbc3f-3231-4a17-ab16-55eb671f1755.d9aecc85-6637-4e56-a359-009944a02940"
     },
     {
-      "name": "SpeedRunners 2: King of Speed",
-      "lastPlayed": "2026-10-24T02:55:16.3280423Z",
-      "image": "https://store-images.s-microsoft.com/image/apps.25269.14327242010981927.a5495c37-2e09-4b3f-82a1-e015a8eb734a.9945ab02-07e9-4a94-b073-d0397a277c86",
-      "achievements": {
-        "earned": 26,
-        "gamerscore": 680
-      },
-      "poster": "https://store-images.s-microsoft.com/image/apps.34223.14327242010981927.a5495c37-2e09-4b3f-82a1-e015a8eb734a.ba1ba654-43f4-494c-af69-2f04015448e2"
-    },
-    {
       "name": "Minecraft",
       "lastPlayed": "2026-10-17T22:10:55.1799348Z",
       "image": "https://images-eds-ssl.xboxlive.com/image?url=z951ykn43p4FqWbbFvR2Ec.8vbDhj8G2Xe7JngaTToBAInhxUS6pI0HjtmvshPyKpwWTprHeUG2HfG4pmZEwqG1NSq4NmJCkpdYNX7I2_MZnlEj2Siz53v7pgxrHSPY2jzHMeYk2oJm_0PtqfvgsMw--",
@@ -43,16 +53,6 @@
         "gamerscore": 0
       },
       "poster": "https://store-images.s-microsoft.com/image/apps.17382.13510798885735219.9735d495-578c-4a4c-b892-3eb3a780b3a0.d3792486-cf98-40c0-a2c1-d6443f0e2b70"
-    },
-    {
-      "name": "Gears of War: E-Day",
-      "lastPlayed": "2026-10-11T05:18:10.0456802Z",
-      "image": "https://store-images.s-microsoft.com/image/apps.10362.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.10a73531-4bf2-4be3-ac6c-45a529b8e30c",
-      "achievements": {
-        "earned": 6,
-        "gamerscore": 90
-      },
-      "poster": "https://store-images.s-microsoft.com/image/apps.58579.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.0c0f53d8-d3af-4c48-a1a6-22b31c4ec463"
     },
     {
       "name": "Roblox Studio",
@@ -65,5 +65,5 @@
       "poster": null
     }
   ],
-  "updatedAt": "2026-10-25T06:26:29.852Z"
+  "updatedAt": "2026-11-01T16:04:53.824Z"
 }
