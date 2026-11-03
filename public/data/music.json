@@ -80,8 +80,13 @@
     {
       "name": "feelin weeby",
       "url": "https://music.apple.com/us/playlist/feelin-weeby/pl.u-aZb0NorCPbNzglM",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/116ZdzJK4NeLDysvJX26LA/200x200bb.jpg",
-      "mosaic": [],
+      "artwork": null,
+      "mosaic": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/16/f8/40/16f84094-ff89-e08c-937f-4e136968090f/PCSP_03301.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cb/e7/4a/cbe74ac2-3dba-c282-5be6-5cc1c71ccf82/4988061912912.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/5d/27/005d27d0-7b27-193b-51a2-35ca874d8f79/AVCD-96010.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/2d/6c/e4/2d6ce494-0004-7378-fc14-5094f36dab9e/4547366450453.jpg/200x200bb.jpg"
+      ],
       "trackCount": 100,
       "moreTracks": true
     },
@@ -142,5 +147,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-02T19:32:32.541Z"
+  "updatedAt": "2026-11-03T17:07:03.661Z"
 }
