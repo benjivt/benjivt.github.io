@@ -1,39 +1,39 @@
 {
   "recent": [
     {
-      "name": "Jin Sheng Yuan (今生缘)",
-      "artist": "OCT",
-      "album": "Jin Sheng Yuan (今生缘) - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/13/65/3a/13653a39-396e-d696-fe4a-a34fff0b9206/artwork.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/jin-sheng-yuan-%E4%BB%8A%E7%94%9F%E7%BC%98/6803002025?i=6803002387"
+      "name": "Bemba Colorá (Live)",
+      "artist": "Fania All-Stars & Celia Cruz",
+      "album": "Greatest Hits",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/09/b2/f8/09b2f812-84e0-7bfd-746e-6af0307f359e/18CRGIM08498.rgb.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/bemba-color%C3%A1-live/1466316560?i=1466316563"
     },
     {
-      "name": "Supernova",
-      "artist": "aespa",
-      "album": "Armageddon - The 1st Album",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/50/7e/e0/507ee09f-ccfd-1e3c-af90-ca5e92b1221b/00888735949869_Cover.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/supernova/1773694541?i=1773694544"
+      "name": "Nostalgia",
+      "artist": "Oscar D'León",
+      "album": "La Salsa Soy Yo",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/df/d6/10/dfd610e8-ee46-3de5-d16a-7f5027141966/19CRGIM18289.rgb.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/nostalgia/1495524600?i=1495525336"
     },
     {
-      "name": "SHYNESS BOY",
-      "artist": "Anri",
-      "album": "Timely!!",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/72/26/5d/72265d48-d844-8217-1944-288436a50820/mzi.jgyybcqg.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/shyness-boy/283306771?i=283306778"
+      "name": "La Murga (feat. Héctor Lavoe) [Remastered 2025]",
+      "artist": "Willie Colón",
+      "album": "Asalto Navideño (Remastered 2025) [feat. Héctor Lavoe]",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/87/86/d6/8786d61e-612b-bd28-2046-a0047909afe1/25CRGIM48687.rgb.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/la-murga-feat-h%C3%A9ctor-lavoe-remastered-2025/1838532448?i=1838532466"
     },
     {
-      "name": "1984: Seireki 2000 Nen Ni Mukete (2012 Remaster)",
-      "artist": "JUNKO YAGAMI",
-      "album": "Communication (+3) [2012 Remaster]",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/aa/37/ac/aa37ac9d-aa55-6ffc-646d-1ba480660f56/1200214350246.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/1984-seireki-2000-nen-ni-mukete-2012-remaster/6781121983?i=6781121990"
+      "name": "Casabe y Macho",
+      "artist": "Compay Segundo",
+      "album": "El Compadre Again",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/00/f9/12/00f9127c-7562-5a71-2ce0-f4e5bccd91c7/617465651557.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/casabe-y-macho/1712041533?i=1712041544"
     },
     {
-      "name": "Yesterday",
-      "artist": "OFFICIAL HIGE DANDISM",
-      "album": "Traveler",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/9c/7d/88/9c7d883d-4477-bf68-f56f-a726030a63a2/PCCA_04822.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/yesterday/1479397582?i=1479397583"
+      "name": "El Ratón (Live In Africa)",
+      "artist": "Fania All-Stars",
+      "album": null,
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Video/ee/2e/c7/mzi.zsqtumll.jpg/200x200mv.jpg",
+      "url": "https://music.apple.com/us/music-video/el-rat%C3%B3n-live-in-africa/335703879"
     }
   ],
   "heavyRotation": [
@@ -48,21 +48,21 @@
       "moreTracks": false
     },
     {
+      "name": "💃🏻🕺🏽",
+      "artist": "Benji Kofi",
+      "kind": "playlist",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-032-Image000001/v4/e0/35/93/e0359327-fece-6c4d-1af9-ffa041c3962d/image/200x200bb.jpg",
+      "url": "https://music.apple.com/us/playlist/pl.u-9N9L1LJIx5joDME",
+      "mosaic": [],
+      "trackCount": 59,
+      "moreTracks": false
+    },
+    {
       "name": "Jin Sheng Yuan (今生缘) - Single",
       "artist": "OCT",
       "kind": "album",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/13/65/3a/13653a39-396e-d696-fe4a-a34fff0b9206/artwork.jpg/200x200bb.jpg",
       "url": "https://music.apple.com/us/album/jin-sheng-yuan-%E4%BB%8A%E7%94%9F%E7%BC%98-single/6803002025",
-      "mosaic": [],
-      "trackCount": null,
-      "moreTracks": false
-    },
-    {
-      "name": "Gemini Rights",
-      "artist": "Steve Lacy",
-      "kind": "album",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/41/cf/77/41cf7744-535f-3679-0ca6-c1b8d3f98c8f/196874557266.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/gemini-rights/6788150539",
       "mosaic": [],
       "trackCount": null,
       "moreTracks": false
@@ -147,5 +147,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-03T17:07:03.661Z"
+  "updatedAt": "2026-11-04T17:17:45.937Z"
 }
