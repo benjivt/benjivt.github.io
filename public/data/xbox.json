@@ -5,18 +5,48 @@
   "avatar": "https://images-eds-ssl.xboxlive.com/image?url=wHwbXKif8cus8csoZ03RW3apWESZjav65Yncai8aRmVbSlZ3zqRpg1sdxEje_JmF9fbbNaw7w_DwgUNd_IsJn5GVBv01wA5OXrs.hhvueHxhB8gZS4n6AH762o_FJ3COFBsPcz_47sA9jh8UN1KZPLMCByeJhlJ9VkXQ8juUrA8-&format=png",
   "recent": [
     {
-      "name": "Gears of War: E-Day",
-      "lastPlayed": "2026-11-01T06:18:00.030478Z",
-      "image": "https://store-images.s-microsoft.com/image/apps.10362.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.10a73531-4bf2-4be3-ac6c-45a529b8e30c",
+      "name": "Call of Duty®",
+      "lastPlayed": "2026-11-08T04:02:53.0510438Z",
+      "image": "https://store-images.s-microsoft.com/image/apps.1874.13966330883349940.086b5b1f-f39e-4568-98a0-f4528f85932f.484f4dfd-283a-4be9-b55d-1d744583b3e0",
       "achievements": {
-        "earned": 6,
-        "gamerscore": 90
+        "earned": 9,
+        "gamerscore": 285
       },
-      "poster": "https://store-images.s-microsoft.com/image/apps.58579.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.0c0f53d8-d3af-4c48-a1a6-22b31c4ec463"
+      "poster": "https://store-images.s-microsoft.com/image/apps.30472.13966330883349940.9a0bbc3f-3231-4a17-ab16-55eb671f1755.d9aecc85-6637-4e56-a359-009944a02940"
+    },
+    {
+      "name": "High On Life 2",
+      "lastPlayed": "2026-11-07T09:18:07.4796182Z",
+      "image": "https://store-images.s-microsoft.com/image/apps.18391.13600359535610445.83a29ac7-f121-4e17-8768-bd1631b536e6.8367f48f-6c61-4bd9-9436-f32b024e7f54",
+      "achievements": {
+        "earned": 0,
+        "gamerscore": 0
+      },
+      "poster": "https://store-images.s-microsoft.com/image/apps.24508.13600359535610445.83a29ac7-f121-4e17-8768-bd1631b536e6.f02f14c4-46aa-493a-aa6b-e1b28399f5ef"
+    },
+    {
+      "name": "Rocket League®",
+      "lastPlayed": "2026-11-07T09:08:55.1485764Z",
+      "image": "https://store-images.s-microsoft.com/image/apps.42368.65187692735347017.3990a461-2db8-41ef-8bf8-33d50ff2e82a.c3b82bee-c39d-4e94-b239-2ab0170c2551",
+      "achievements": {
+        "earned": 77,
+        "gamerscore": 2200
+      },
+      "poster": "https://store-images.s-microsoft.com/image/apps.6066.65187692735347017.3990a461-2db8-41ef-8bf8-33d50ff2e82a.7bb9a856-df77-4e8b-a605-7863390a7aa0"
+    },
+    {
+      "name": "Tamashika",
+      "lastPlayed": "2026-11-07T09:05:18.0899584Z",
+      "image": "https://store-images.s-microsoft.com/image/apps.22873.14600836934234842.a1fef063-58e5-4e0f-8578-d98cf1b258e2.d82d7d23-6000-4ed9-bb58-d1ba05983103",
+      "achievements": {
+        "earned": 4,
+        "gamerscore": 125
+      },
+      "poster": "https://store-images.s-microsoft.com/image/apps.34746.14600836934234842.a1fef063-58e5-4e0f-8578-d98cf1b258e2.a65b169b-619e-425b-abd8-7581804b16a5"
     },
     {
       "name": "SpeedRunners 2: King of Speed",
-      "lastPlayed": "2026-11-01T06:12:58.6857458Z",
+      "lastPlayed": "2026-11-07T07:52:58.8183553Z",
       "image": "https://store-images.s-microsoft.com/image/apps.25269.14327242010981927.a5495c37-2e09-4b3f-82a1-e015a8eb734a.9945ab02-07e9-4a94-b073-d0397a277c86",
       "achievements": {
         "earned": 26,
@@ -25,45 +55,15 @@
       "poster": "https://store-images.s-microsoft.com/image/apps.34223.14327242010981927.a5495c37-2e09-4b3f-82a1-e015a8eb734a.ba1ba654-43f4-494c-af69-2f04015448e2"
     },
     {
-      "name": "Fortnite",
-      "lastPlayed": "2026-10-24T18:18:17.4016547Z",
-      "image": "https://store-images.s-microsoft.com/image/apps.31130.70702278257994163.f7265b8a-f10e-49c4-8115-73c4d800af63.641ad74a-edd4-40c9-8049-3bb73387d09a",
+      "name": "Gears of War: E-Day",
+      "lastPlayed": "2026-11-01T06:18:00.030478Z",
+      "image": "https://store-images.s-microsoft.com/image/apps.10362.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.10a73531-4bf2-4be3-ac6c-45a529b8e30c",
       "achievements": {
-        "earned": 0,
-        "gamerscore": 0
+        "earned": 6,
+        "gamerscore": 90
       },
-      "poster": "https://store-images.s-microsoft.com/image/apps.52548.70702278257994163.f7265b8a-f10e-49c4-8115-73c4d800af63.a0e057ff-c216-4206-a6b9-65bfc7d54fb0"
-    },
-    {
-      "name": "Call of Duty®",
-      "lastPlayed": "2026-10-24T05:01:33.9076791Z",
-      "image": "https://store-images.s-microsoft.com/image/apps.16540.13966330883349940.4dd14557-7da0-410c-be6f-a8a48bf42283.024ce1ae-5177-4554-b058-86ab8f466a5d",
-      "achievements": {
-        "earned": 9,
-        "gamerscore": 285
-      },
-      "poster": "https://store-images.s-microsoft.com/image/apps.30472.13966330883349940.9a0bbc3f-3231-4a17-ab16-55eb671f1755.d9aecc85-6637-4e56-a359-009944a02940"
-    },
-    {
-      "name": "Minecraft",
-      "lastPlayed": "2026-10-17T22:10:55.1799348Z",
-      "image": "https://images-eds-ssl.xboxlive.com/image?url=z951ykn43p4FqWbbFvR2Ec.8vbDhj8G2Xe7JngaTToBAInhxUS6pI0HjtmvshPyKpwWTprHeUG2HfG4pmZEwqG1NSq4NmJCkpdYNX7I2_MZnlEj2Siz53v7pgxrHSPY2jzHMeYk2oJm_0PtqfvgsMw--",
-      "achievements": {
-        "earned": 0,
-        "gamerscore": 0
-      },
-      "poster": "https://store-images.s-microsoft.com/image/apps.17382.13510798885735219.9735d495-578c-4a4c-b892-3eb3a780b3a0.d3792486-cf98-40c0-a2c1-d6443f0e2b70"
-    },
-    {
-      "name": "Roblox Studio",
-      "lastPlayed": "2026-10-11T04:18:24.0372133Z",
-      "image": null,
-      "achievements": {
-        "earned": 0,
-        "gamerscore": 0
-      },
-      "poster": null
+      "poster": "https://store-images.s-microsoft.com/image/apps.58579.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.0c0f53d8-d3af-4c48-a1a6-22b31c4ec463"
     }
   ],
-  "updatedAt": "2026-11-05T17:26:44.934Z"
+  "updatedAt": "2026-11-08T16:00:24.064Z"
 }
