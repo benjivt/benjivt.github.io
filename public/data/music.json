@@ -1,6 +1,27 @@
 {
   "recent": [
     {
+      "name": "baby breathe",
+      "artist": "UniBe@t",
+      "album": "nothing new - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/1e/2d/441e2d82-e3f1-0f44-4a3e-446840ed11f8/artwork.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/baby-breathe/1782833492?i=1782833495"
+    },
+    {
+      "name": "Those Who Will Win",
+      "artist": "Dunsin Oyekan",
+      "album": "The Glory Experience (Songs of Zion)",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2d/a5/df/2da5df99-9368-dfa8-b9af-b52a5e084b8e/859760281446_cover.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/those-who-will-win/1611267565?i=1611267885"
+    },
+    {
+      "name": "No One Like The Lord (Live)",
+      "artist": "Bethel Music & Jenn Johnson",
+      "album": "We Must Respond (Live)",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/76/bb/39/76bb3922-0410-81ba-b03b-49f7ee46687d/193436400404_YtOLPtSRSfQnQiIlwRFINALCOVER.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/no-one-like-the-lord-live/1770688604?i=1770688607"
+    },
+    {
       "name": "Your Spell",
       "artist": "Bad Computer",
       "album": "Somewhere New - EP",
@@ -13,27 +34,6 @@
       "album": "NEW HORIZONS - Single",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/38/0d/20/380d20e2-f445-0d30-cbfe-a23a8c9daf2c/artwork.jpg/200x200bb.jpg",
       "url": "https://music.apple.com/us/album/new-horizons/1510807379?i=1510807385"
-    },
-    {
-      "name": "Bubbles",
-      "artist": "Tokyo Machine",
-      "album": "Bubbles - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/47/68/04/476804f6-a0d5-8809-c347-079762f35afd/Tokyo_Machine_-_BUBBLES_Art.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/bubbles/1274673101?i=1274673107"
-    },
-    {
-      "name": "Paradigm (feat. Karra)",
-      "artist": "Bad Computer",
-      "album": "Paradigm (feat. Karra) - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/6d/8d/e4/6d8de41e-a3c2-fa64-6d08-280d70567475/Bad_Computer_-_Paradigm_feat._Karra_Art.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/paradigm-feat-karra/1401560947?i=1401566306"
-    },
-    {
-      "name": "Riddle",
-      "artist": "Bad Computer",
-      "album": "Riddle - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/2d/33/c6/2d33c691-2398-fdd7-7353-717414620553/703980548783.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/riddle/1506465949?i=1506465950"
     }
   ],
   "heavyRotation": [
@@ -58,11 +58,11 @@
       "moreTracks": false
     },
     {
-      "name": "when the computer is bad",
+      "name": "Worship 🕊️",
       "artist": "Benji Kofi",
       "kind": "playlist",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-032-Image000001/v4/f7/ed/83/f7ed83f8-e68d-5441-fe06-115160c22bf0/image/200x200bb.jpg",
-      "url": "https://music.apple.com/us/playlist/when-the-computer-is-bad/pl.u-11zBXaoi8qAjG4E",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/3jmiexW3vcotipkKRaI--Q/200x200bb.jpg",
+      "url": "https://music.apple.com/us/playlist/worship/pl.u-9N9LzppCx5joDME",
       "mosaic": [],
       "trackCount": null,
       "moreTracks": false
@@ -142,5 +142,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-08T16:00:27.135Z"
+  "updatedAt": "2026-11-09T19:52:33.378Z"
 }
