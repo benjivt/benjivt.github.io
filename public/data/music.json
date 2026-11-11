@@ -1,6 +1,20 @@
 {
   "recent": [
     {
+      "name": "Dominate",
+      "artist": "Space Laces",
+      "album": "Dominate - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/58/c1/ab/58c1ab66-431c-ec2b-c504-d3ca16e516bf/5056017305060.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/dominate/1560124387?i=1560124388"
+    },
+    {
+      "name": "Mr. Sandman",
+      "artist": "The Chordettes",
+      "album": "The Chordettes' Best",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/4f/57/13/4f57130a-d50e-7ac5-a778-e287bf3c0ff1/844185087759_.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/mr-sandman/1713796571?i=1713796573"
+    },
+    {
       "name": "Rapture",
       "artist": "Kompany",
       "album": "New Reign - EP",
@@ -20,20 +34,6 @@
       "album": "Overdrive - EP",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/9a/1e/75/9a1e7561-38c5-bf93-b99d-54b231b10fb6/5056017301925.png/200x200bb.jpg",
       "url": "https://music.apple.com/us/album/kaiju/1392949149?i=1392949420"
-    },
-    {
-      "name": "Hysteria",
-      "artist": "Virtual Riot",
-      "album": "Save Yourself EP",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/75/c7/1f/75c71f0c-cddb-ccb2-f650-469ceded3881/cover.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/hysteria/1479128407?i=1479128412"
-    },
-    {
-      "name": "Calling Me",
-      "artist": "Dion Timmer",
-      "album": "Very Extra",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d4/dc/80/d4dc8003-7253-9c65-636b-bdf71302ee7b/8718857055532.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/calling-me/1444726658?i=1444726751"
     }
   ],
   "heavyRotation": [
@@ -48,6 +48,16 @@
       "moreTracks": false
     },
     {
+      "name": "Dominate - Single",
+      "artist": "Space Laces",
+      "kind": "album",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/58/c1/ab/58c1ab66-431c-ec2b-c504-d3ca16e516bf/5056017305060.png/200x200bb.jpg",
+      "url": null,
+      "mosaic": [],
+      "trackCount": null,
+      "moreTracks": false
+    },
+    {
       "name": "Tame",
       "artist": null,
       "kind": "playlist",
@@ -55,16 +65,6 @@
       "url": "https://music.apple.com/us/playlist/tame/pl.u-mJy89y4TzgblKm5",
       "mosaic": [],
       "trackCount": 17,
-      "moreTracks": false
-    },
-    {
-      "name": "The Chordettes' Best",
-      "artist": "The Chordettes",
-      "kind": "album",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/4f/57/13/4f57130a-d50e-7ac5-a778-e287bf3c0ff1/844185087759_.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/the-chordettes-best/1713796571",
-      "mosaic": [],
-      "trackCount": null,
       "moreTracks": false
     }
   ],
@@ -142,5 +142,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-10T17:05:51.930Z"
+  "updatedAt": "2026-11-11T17:12:58.879Z"
 }
