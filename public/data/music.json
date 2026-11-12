@@ -1,52 +1,42 @@
 {
   "recent": [
     {
-      "name": "Dominate",
-      "artist": "Space Laces",
-      "album": "Dominate - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/58/c1/ab/58c1ab66-431c-ec2b-c504-d3ca16e516bf/5056017305060.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/dominate/1560124387?i=1560124388"
+      "name": "Cities",
+      "artist": "Throttle",
+      "album": "Where U Are",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/0e/ef/18/0eef1893-24fa-2878-558b-457e03d4b770/703980546697.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/cities/1480441421?i=1480441428"
     },
     {
-      "name": "Mr. Sandman",
-      "artist": "The Chordettes",
-      "album": "The Chordettes' Best",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/4f/57/13/4f57130a-d50e-7ac5-a778-e287bf3c0ff1/844185087759_.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/mr-sandman/1713796571?i=1713796573"
+      "name": "Only You",
+      "artist": "DEXTER KING & Alexis Donn",
+      "album": "Rocket League X Monstercat Vol. 7",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/90/f2/1f/90f21fb7-7d0e-4b87-9e36-6253b17e74e4/703980551486.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/only-you/1529963142?i=1529963152"
     },
     {
-      "name": "Rapture",
-      "artist": "Kompany",
-      "album": "New Reign - EP",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/16/b0/42/16b0426d-97b2-4b44-375f-123a321907cb/5056017302021.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/rapture/1412637964?i=1412638133"
+      "name": "Good 4 Me",
+      "artist": "Vindata",
+      "album": "Good 4 Me / Union - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/aa/5e/a0/aa5ea0a6-4d00-acef-e3aa-4426abec360b/742779534842.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/good-4-me/1548393887?i=1548393888"
     },
     {
-      "name": "Ruckus",
-      "artist": "Trampa & Marauda",
-      "album": "Ruckus - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/89/e1/eb/89e1eba2-1eac-9f3d-f029-d5111e68a853/5056017303943.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/ruckus/1496580783?i=1496580784"
+      "name": "Eternal",
+      "artist": "Athena & smle",
+      "album": "Eternal - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/5e/d6/ad/5ed6adec-746b-feca-924e-916cc01b5ba0/742779538208.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/eternal/1573653237?i=1573653239"
     },
     {
-      "name": "Kaiju",
-      "artist": "Space Laces",
-      "album": "Overdrive - EP",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/9a/1e/75/9a1e7561-38c5-bf93-b99d-54b231b10fb6/5056017301925.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/kaiju/1392949149?i=1392949420"
+      "name": "Firework (Melad Remix)",
+      "artist": "Hollywood Principle",
+      "album": "Starting Over (Deluxe Edition)",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/d3/9c/76/d39c764c-8398-7cf7-6503-729fb08df497/artwork.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/firework-melad-remix/1628412731?i=1628412739"
     }
   ],
   "heavyRotation": [
-    {
-      "name": "nothing new - Single",
-      "artist": "UniBe@t",
-      "kind": "album",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/1e/2d/441e2d82-e3f1-0f44-4a3e-446840ed11f8/artwork.jpg/200x200bb.jpg",
-      "url": null,
-      "mosaic": [],
-      "trackCount": null,
-      "moreTracks": false
-    },
     {
       "name": "Dominate - Single",
       "artist": "Space Laces",
@@ -58,13 +48,28 @@
       "moreTracks": false
     },
     {
-      "name": "Tame",
+      "name": "nothing new - Single",
+      "artist": "UniBe@t",
+      "kind": "album",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/1e/2d/441e2d82-e3f1-0f44-4a3e-446840ed11f8/artwork.jpg/200x200bb.jpg",
+      "url": null,
+      "mosaic": [],
+      "trackCount": null,
+      "moreTracks": false
+    },
+    {
+      "name": "Grand Plat",
       "artist": null,
       "kind": "playlist",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/gen/1200x1200AM.PDCXS11.jpg?c1=CFBFB6&c2=F2C199&c3=2CC9D7&c4=430200&signature=ddde8e1ef3c06d66a31182c8133cfaa478e3b4c273f3f680b6c43d61d89d4d3d&t=VGFtZQ%3D%3D&tc=000000&vkey=1",
-      "url": "https://music.apple.com/us/playlist/tame/pl.u-mJy89y4TzgblKm5",
-      "mosaic": [],
-      "trackCount": 17,
+      "artwork": null,
+      "url": "https://music.apple.com/us/playlist/grand-plat/pl.u-DdANv1BsaRjgA4V",
+      "mosaic": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/1f/d0/b9/1fd0b9c5-3ad5-e591-b2dd-52fa8548cd31/Rocket_League_x_Monstercat_Vol.3_Art_-_Duumu.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/54/18/9c/54189c1f-21f6-843c-17bf-93556d01287c/Rocket_League_x_Monstercat_Vol.3_Art_-_Stephen_Walking.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a9/99/c6/a999c6f2-bf14-1573-17ab-3855b9582b00/Rocket_League_x_Monstercat_Vol.3_Art_-_Dion_Timmer.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/7c/be/d0/7cbed056-01af-8e39-2f5c-dfdf11f311fc/Rocket_League_x_Monstercat_Vol.3_Art_-_Bad_Computer.jpg/200x200bb.jpg"
+      ],
+      "trackCount": 49,
       "moreTracks": false
     }
   ],
@@ -142,5 +147,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-11T17:12:58.879Z"
+  "updatedAt": "2026-11-12T17:37:45.970Z"
 }
