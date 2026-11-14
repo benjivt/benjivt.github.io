@@ -1,39 +1,39 @@
 {
   "recent": [
     {
+      "name": "No More Lies",
+      "artist": "Thundercat & Tame Impala",
+      "album": "No More Lies - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/38/e1/32/38e1324d-bf85-837a-fae0-bfe9578a4849/5054429174557.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/no-more-lies/1679528051?i=1679528052"
+    },
+    {
+      "name": "Borderline",
+      "artist": "Tame Impala",
+      "album": "The Slow Rush",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/65/e3/e7/65e3e740-b69f-f5cb-f2e6-7dedb5265ac9/19UMGIM96748.rgb.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/borderline/1497230760?i=1497230972"
+    },
+    {
+      "name": "The Boat I Row",
+      "artist": "Tame Impala",
+      "album": "The Slow Rush B-Sides & Remixes",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/8e/78/568e7844-a0a3-8310-1339-11d1f838aaed/21UMGIM82347.rgb.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/the-boat-i-row/1588852475?i=1588852783"
+    },
+    {
+      "name": "Let It Happen",
+      "artist": "Tame Impala",
+      "album": "Currents",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/a8/2e/b4/a82eb490-f30a-a321-461a-0383c88fec95/15UMGIM23316.rgb.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/let-it-happen/1440838039?i=1440838060"
+    },
+    {
       "name": "The Sun",
       "artist": "Myd",
       "album": "All Inclusive - Single",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/e6/57/8e/e6578e59-e8ba-859e-8d95-4b72fb274f0a/5060525432477_cover.jpg/200x200bb.jpg",
       "url": "https://music.apple.com/us/album/the-sun/1287984385?i=1287984821"
-    },
-    {
-      "name": "Moving Men (feat. Mac DeMarco)",
-      "artist": "Myd",
-      "album": "Born a Loser",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/78/c1/2f/78c12f6f-6469-ebdc-5faf-2614ffb653e4/5060766769691_cover.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/moving-men-feat-mac-demarco/1551995868?i=1551996705"
-    },
-    {
-      "name": "New Person, Same Old Mistakes",
-      "artist": "Tame Impala",
-      "album": "Currents",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/a8/2e/b4/a82eb490-f30a-a321-461a-0383c88fec95/15UMGIM23316.rgb.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/new-person-same-old-mistakes/1440838039?i=1440838708"
-    },
-    {
-      "name": "Is It True",
-      "artist": "Tame Impala",
-      "album": "The Slow Rush",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/65/e3/e7/65e3e740-b69f-f5cb-f2e6-7dedb5265ac9/19UMGIM96748.rgb.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/is-it-true/1497230760?i=1497231164"
-    },
-    {
-      "name": "No Choice",
-      "artist": "Tame Impala",
-      "album": "The Slow Rush B-Sides & Remixes",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/56/8e/78/568e7844-a0a3-8310-1339-11d1f838aaed/21UMGIM82347.rgb.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/no-choice/1588852475?i=1588852786"
     }
   ],
   "heavyRotation": [
@@ -80,8 +80,13 @@
     {
       "name": "feelin weeby",
       "url": "https://music.apple.com/us/playlist/feelin-weeby/pl.u-aZb0NorCPbNzglM",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/116ZdzJK4NeLDysvJX26LA/200x200bb.jpg",
-      "mosaic": [],
+      "artwork": null,
+      "mosaic": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/16/f8/40/16f84094-ff89-e08c-937f-4e136968090f/PCSP_03301.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cb/e7/4a/cbe74ac2-3dba-c282-5be6-5cc1c71ccf82/4988061912912.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/00/5d/27/005d27d0-7b27-193b-51a2-35ca874d8f79/AVCD-96010.jpg/200x200bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/2d/6c/e4/2d6ce494-0004-7378-fc14-5094f36dab9e/4547366450453.jpg/200x200bb.jpg"
+      ],
       "trackCount": 100,
       "moreTracks": true
     },
@@ -142,5 +147,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-13T17:15:09.998Z"
+  "updatedAt": "2026-11-14T15:52:08.771Z"
 }
