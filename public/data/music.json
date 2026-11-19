@@ -1,39 +1,39 @@
 {
   "recent": [
     {
-      "name": "Son Of Dragon (feat. Cue & Mergs)",
-      "artist": "DJ Toxic",
-      "album": "Son Of Dragon (feat. Cue & Mergs) - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/da/94/44da9476-6050-e7f2-a0e3-12cdc8c7ba07/prdd002513.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/son-of-dragon-feat-cue-mergs/1777415916?i=1777415918"
+      "name": "Ramona",
+      "artist": "Sonora Ponceña",
+      "album": "50 Aniversario, Vol.2",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/ramona/366089266?i=366090139"
     },
     {
-      "name": "I Just Can't Get Enough 2024",
-      "artist": "Herd & Fitz, Jakkob & Abigail Bailey",
-      "album": "I Just Can't Get Enough 2024 - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/13/8d/12138d81-a63e-1b61-a6aa-e643291bc331/196872132922.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/i-just-cant-get-enough-2024/1755250412?i=1755250423"
+      "name": "Yambeque (feat. José Alberto \"El Canario\")",
+      "artist": "Sonora Ponceña",
+      "album": "50 Aniversario, Vol.2",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/yambeque-feat-jos%C3%A9-alberto-el-canario/366089266?i=366089907"
     },
     {
-      "name": "Dominate",
-      "artist": "Space Laces",
-      "album": "Dominate - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/58/c1/ab/58c1ab66-431c-ec2b-c504-d3ca16e516bf/5056017305060.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/dominate/1560124387?i=1560124388"
+      "name": "No Vive En Este Planeta (feat. Antonio Cabán Vale \"El Topo\")",
+      "artist": "Sonora Ponceña",
+      "album": "50 Aniversario, Vol.2",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/no-vive-en-este-planeta-feat-antonio-cab%C3%A1n-vale-el-topo/366089266?i=366089821"
     },
     {
-      "name": "Breathe Deeper",
-      "artist": "Tame Impala",
-      "album": "The Slow Rush",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/65/e3/e7/65e3e740-b69f-f5cb-f2e6-7dedb5265ac9/19UMGIM96748.rgb.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/breathe-deeper/1497230760?i=1497231158"
+      "name": "Date Cuenta",
+      "artist": "Sonora Ponceña",
+      "album": "50 Aniversario, Vol.2",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/date-cuenta/366089266?i=366090381"
     },
     {
-      "name": "No More Lies",
-      "artist": "Thundercat & Tame Impala",
-      "album": "No More Lies - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/38/e1/32/38e1324d-bf85-837a-fae0-bfe9578a4849/5054429174557.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/no-more-lies/1679528051?i=1679528052"
+      "name": "Bomba Carambomba (feat. Lucca Lucciano)",
+      "artist": "Sonora Ponceña",
+      "album": "50 Aniversario, Vol.2",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/bomba-carambomba-feat-lucca-lucciano/366089266?i=366089292"
     }
   ],
   "heavyRotation": [
@@ -74,7 +74,7 @@
       "url": "https://music.apple.com/us/playlist/pl.u-9N9L1LJIx5joDME",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-032-Image000001/v4/e0/35/93/e0359327-fece-6c4d-1af9-ffa041c3962d/image/200x200bb.jpg",
       "mosaic": [],
-      "trackCount": 59,
+      "trackCount": 61,
       "moreTracks": false
     },
     {
@@ -147,5 +147,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-18T18:08:07.718Z"
+  "updatedAt": "2026-11-19T18:20:29.183Z"
 }
