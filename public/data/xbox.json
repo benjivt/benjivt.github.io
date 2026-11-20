@@ -5,6 +5,16 @@
   "avatar": "https://images-eds-ssl.xboxlive.com/image?url=wHwbXKif8cus8csoZ03RW3apWESZjav65Yncai8aRmVbSlZ3zqRpg1sdxEje_JmF9fbbNaw7w_DwgUNd_IsJn5GVBv01wA5OXrs.hhvueHxhB8gZS4n6AH762o_FJ3COFBsPcz_47sA9jh8UN1KZPLMCByeJhlJ9VkXQ8juUrA8-&format=png",
   "recent": [
     {
+      "name": "TrackMania Turbo",
+      "lastPlayed": "2026-11-20T02:55:21.6273269Z",
+      "image": null,
+      "achievements": {
+        "earned": 0,
+        "gamerscore": 0
+      },
+      "poster": null
+    },
+    {
       "name": "SpeedRunners 2: King of Speed",
       "lastPlayed": "2026-11-17T23:24:39.2919637Z",
       "image": "https://store-images.s-microsoft.com/image/apps.25269.14327242010981927.a5495c37-2e09-4b3f-82a1-e015a8eb734a.9945ab02-07e9-4a94-b073-d0397a277c86",
@@ -53,17 +63,7 @@
         "gamerscore": 125
       },
       "poster": "https://store-images.s-microsoft.com/image/apps.34746.14600836934234842.a1fef063-58e5-4e0f-8578-d98cf1b258e2.a65b169b-619e-425b-abd8-7581804b16a5"
-    },
-    {
-      "name": "Gears of War: E-Day",
-      "lastPlayed": "2026-11-01T06:18:00.030478Z",
-      "image": "https://store-images.s-microsoft.com/image/apps.10362.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.10a73531-4bf2-4be3-ac6c-45a529b8e30c",
-      "achievements": {
-        "earned": 6,
-        "gamerscore": 90
-      },
-      "poster": "https://store-images.s-microsoft.com/image/apps.58579.13978914104035031.46ab30c4-87b3-48d6-9e4a-ed44b301b17a.0c0f53d8-d3af-4c48-a1a6-22b31c4ec463"
     }
   ],
-  "updatedAt": "2026-11-19T18:20:23.554Z"
+  "updatedAt": "2026-11-20T17:51:19.795Z"
 }
