@@ -1,39 +1,39 @@
 {
   "recent": [
     {
-      "name": "Ramona",
-      "artist": "Sonora Ponceña",
-      "album": "50 Aniversario, Vol.2",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/ramona/366089266?i=366090139"
+      "name": "Where Was I",
+      "artist": "Whales, Roee Yeger & Ashley Apollodor",
+      "album": "Where Was I - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bf/dd/87/bfdd87ce-1f53-8f4e-8c66-e63a37875171/8721465232967.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/where-was-i/1870912283?i=1870912284"
     },
     {
-      "name": "Yambeque (feat. José Alberto \"El Canario\")",
-      "artist": "Sonora Ponceña",
-      "album": "50 Aniversario, Vol.2",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/yambeque-feat-jos%C3%A9-alberto-el-canario/366089266?i=366089907"
+      "name": "Candyland",
+      "artist": "Tobu",
+      "album": "Candyland - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/13/2d/fb/132dfba7-0370-9f68-ebe3-4b7d93cfa946/artwork.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/candyland/1534195849?i=1534195850"
     },
     {
-      "name": "No Vive En Este Planeta (feat. Antonio Cabán Vale \"El Topo\")",
-      "artist": "Sonora Ponceña",
-      "album": "50 Aniversario, Vol.2",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/no-vive-en-este-planeta-feat-antonio-cab%C3%A1n-vale-el-topo/366089266?i=366089821"
+      "name": "The Darkness",
+      "artist": "Xilent",
+      "album": "The Darkness - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/90/64/4f/90644f0e-bd45-7e59-ee59-e0a34ee399cb/703980544525.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/the-darkness/1454380049?i=1454380050"
     },
     {
-      "name": "Date Cuenta",
-      "artist": "Sonora Ponceña",
-      "album": "50 Aniversario, Vol.2",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/date-cuenta/366089266?i=366090381"
+      "name": "Redo",
+      "artist": "Crankdat",
+      "album": "Redo - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/60/48/4b/60484b97-3147-6049-d8b7-063dd3d1bd72/703980550915.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/redo/1495876481?i=1495876482"
     },
     {
-      "name": "Bomba Carambomba (feat. Lucca Lucciano)",
-      "artist": "Sonora Ponceña",
-      "album": "50 Aniversario, Vol.2",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music/4d/80/13/mzi.bkdlhrje.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/bomba-carambomba-feat-lucca-lucciano/366089266?i=366089292"
+      "name": "Collapse",
+      "artist": "Pixel Terror & neverwaves",
+      "album": "Collapse - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/1e/b5/3c/1eb53cd7-555f-e19b-612f-cbf59fc1b843/703980547755.png/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/collapse/1494046753?i=1494046755"
     }
   ],
   "heavyRotation": [
@@ -74,7 +74,7 @@
       "url": "https://music.apple.com/us/playlist/pl.u-9N9L1LJIx5joDME",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/SG-MQ-US-032-Image000001/v4/e0/35/93/e0359327-fece-6c4d-1af9-ffa041c3962d/image/200x200bb.jpg",
       "mosaic": [],
-      "trackCount": 61,
+      "trackCount": 62,
       "moreTracks": false
     },
     {
@@ -147,5 +147,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-21T16:49:44.227Z"
+  "updatedAt": "2026-11-23T21:28:49.582Z"
 }
