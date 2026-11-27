@@ -1,39 +1,39 @@
 {
   "recent": [
     {
-      "name": "Where Was I",
-      "artist": "Whales, Roee Yeger & Ashley Apollodor",
-      "album": "Where Was I - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bf/dd/87/bfdd87ce-1f53-8f4e-8c66-e63a37875171/8721465232967.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/where-was-i/1870912283?i=1870912284"
+      "name": "I Need You",
+      "artist": "TWOFACED & Nikita W",
+      "album": "I Need You - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a2/5e/e7/a25ee7f4-de7d-44ac-b347-27c08c8b5ddf/25UM1IM54259.rgb.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/i-need-you/1845159886?i=1845159888"
     },
     {
-      "name": "Candyland",
-      "artist": "Tobu",
-      "album": "Candyland - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/13/2d/fb/132dfba7-0370-9f68-ebe3-4b7d93cfa946/artwork.jpg/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/candyland/1534195849?i=1534195850"
+      "name": "Man With a Second Face",
+      "artist": "KETTAMA",
+      "album": "Archangel",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ab/de/48/abde4851-5bd2-0bfd-b7bc-ed268b7f09d0/1956.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/man-with-a-second-face/1832786026?i=1832786042"
     },
     {
-      "name": "The Darkness",
-      "artist": "Xilent",
-      "album": "The Darkness - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/90/64/4f/90644f0e-bd45-7e59-ee59-e0a34ee399cb/703980544525.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/the-darkness/1454380049?i=1454380050"
+      "name": "ATC",
+      "artist": "IDEMI",
+      "album": "ATC - Single",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/60/a3/47/60a347d9-6588-4875-2266-8abc4cc0b41f/5034644818559.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/atc/1825366551?i=1825366553"
     },
     {
-      "name": "Redo",
-      "artist": "Crankdat",
-      "album": "Redo - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/60/48/4b/60484b97-3147-6049-d8b7-063dd3d1bd72/703980550915.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/redo/1495876481?i=1495876482"
+      "name": "Plastyx",
+      "artist": "Clouds",
+      "album": "Mass Hysteria - EP",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/77/07/0f/77070fa0-92b1-aa04-123c-de715676c1f6/3229.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/plastyx/1843862917?i=1843862919"
     },
     {
-      "name": "Collapse",
-      "artist": "Pixel Terror & neverwaves",
-      "album": "Collapse - Single",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/1e/b5/3c/1eb53cd7-555f-e19b-612f-cbf59fc1b843/703980547755.png/200x200bb.jpg",
-      "url": "https://music.apple.com/us/album/collapse/1494046753?i=1494046755"
+      "name": "The Real (Heung Version)",
+      "artist": "ATEEZ",
+      "album": "ZERO : FEVER EPILOGUE",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/14/90/3f/14903f1f-ed28-1be8-18c7-5abf159b6970/886449774609.jpg/200x200bb.jpg",
+      "url": "https://music.apple.com/us/album/the-real-heung-version/1597704709?i=1597705058"
     }
   ],
   "heavyRotation": [
@@ -48,16 +48,6 @@
       "moreTracks": false
     },
     {
-      "name": "nothing new - Single",
-      "artist": "UniBe@t",
-      "kind": "album",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/1e/2d/441e2d82-e3f1-0f44-4a3e-446840ed11f8/artwork.jpg/200x200bb.jpg",
-      "url": null,
-      "mosaic": [],
-      "trackCount": null,
-      "moreTracks": false
-    },
-    {
       "name": "Tame",
       "artist": null,
       "kind": "playlist",
@@ -65,6 +55,16 @@
       "url": "https://music.apple.com/us/playlist/tame/pl.u-mJy89y4TzgblKm5",
       "mosaic": [],
       "trackCount": 17,
+      "moreTracks": false
+    },
+    {
+      "name": "nothing new - Single",
+      "artist": "UniBe@t",
+      "kind": "album",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/44/1e/2d/441e2d82-e3f1-0f44-4a3e-446840ed11f8/artwork.jpg/200x200bb.jpg",
+      "url": null,
+      "mosaic": [],
+      "trackCount": null,
       "moreTracks": false
     }
   ],
@@ -147,5 +147,5 @@
       "moreTracks": false
     }
   ],
-  "updatedAt": "2026-11-25T19:20:57.622Z"
+  "updatedAt": "2026-11-27T19:01:34.576Z"
 }
